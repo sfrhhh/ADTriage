@@ -2,49 +2,126 @@
 
 **ADTriage: an ADT feature-level triage workflow for CITE-seq quality assessment**
 
-ADTriage 是一个面向 CITE-seq / Feature Barcode 数据的 **ADT 特征级质量评估工作流**。它以质控后的 Seurat 对象和 Cell Ranger Feature Barcode reference 文件为输入，逐个评估 Antibody-Derived Tag（ADT）特征是否具有合理的生物学信号、是否与 RNA 或 CD45 isoform 信息一致、是否符合细胞类型先验表达模式，并输出可人工审查的 ADT 质量标签。
+ADTriage 是一个面向 CITE-seq / Feature Barcode 数据的 **ADT feature-level quality triage workflow**。
+其目标不是重新完成单细胞上游分析、细胞注释或整合分析，而是针对每一个 Antibody-Derived Tag（ADT）特征，整合以下信息后生成可人工审查的质量评估结果：
+
+```text
+1. FB_ref.csv 中的 feature barcode 信息
+2. mAOC_gene_symbol_map.csv 中的 ADT id → gene symbol 映射
+3. Seurat 对象中的 RNA assay、ADT assay、CD45isoforms assay
+4. Seurat metadata 中用户指定的 >=1 个分组变量
+5. ADT CLR 信号与 RNA log-normalized 信号的一致性
+6. ADT CLR 分布形态、信噪比、动态范围、阳性比例等指标
+7. CD45 剪接变体特异性信号
+8. 规则判断、大模型辅助判断与人工审查结果
+```
+
+ADTriage 输出的核心结果是每个 ADT feature 的质量标签，例如：
+
+```text
+correct
+suspicious
+wrong
+no_signal
+control
+manual_review
+```
 
 ---
 
-## 1. 项目目标
+## 1. 项目定位
 
-CITE-seq 数据中的 ADT 信号受抗体质量、panel 设计、染色条件、背景噪音、ambient antibody、isotype control、feature reference 配置和细胞类型组成影响。常规单细胞分析流程通常关注细胞层面的质控，而缺少对 **每一个 ADT feature 是否可信** 的系统审查。
+ADTriage 关注的是：
 
-ADTriage 的目标是建立一个可复现、可审计、可人工复核的工作流，用于回答以下问题：
+```text
+一个 ADT feature 本身是否合理？
+它的信号是否可解释？
+它是否与 RNA、CD45 isoform 或细胞分组结果一致？
+它是否需要人工审查？
+```
 
-1. 某个 ADT feature 是否能映射到明确的人类基因符号或特定 CD45 isoform？
-2. 该 ADT 的 CLR 信号是否与对应 RNA 表达或 isoform assay 信号一致？
-3. 该 ADT 的阳性细胞类型是否符合已知免疫学或造血系统 marker 先验知识？
-4. 该 ADT 的信号分布是否具备可分离的阳性/阴性群体？
-5. 该 ADT 应被标记为 `correct`、`suspicious`、`wrong`、`no_signal`、`control` 还是 `manual_review`？
+ADTriage 不负责以下任务：
+
+```text
+1. 不运行 standard_scop
+2. 不运行 CellTypist
+3. 不执行细胞注释
+4. 不执行 Seurat 对象标准化主流程
+5. 不执行整合分析
+6. 不决定最终生物学结论
+```
+
+用户需要在输入的 Seurat 对象中提前准备好用于分组的 metadata 列。
+ADTriage 只读取这些列，并基于这些列绘制分组图、计算分组统计量和生成审查表。
 
 ---
 
 ## 2. 输入文件
 
-ADTriage 需要两个核心输入。
-
 ### 2.1 质控后的 Seurat 对象
 
-输入对象必须为 `.rds` 格式的 Seurat object，并至少包含以下三个 assay：
+输入 Seurat 对象必须至少包含以下 assay：
 
 ```text
 RNA
 ADT
-CD45-isoform
+CD45isoforms
 ```
 
 其中：
 
-* `RNA` assay 用于验证 ADT 对应基因的转录本表达。
-* `ADT` assay 用于评估抗体标签信号。
-* `CD45-isoform` assay 用于验证 CD45RA、CD45RO 等无法直接映射为独立 gene symbol 的 CD45 剪接变体信号。
+```text
+RNA           : 基因表达矩阵
+ADT           : ADT feature barcode 矩阵
+CD45isoforms  : CD45 剪接变体特征矩阵
+```
 
-Seurat 对象中还需要包含细胞聚类信息或细胞类型注释信息。若对象中尚未包含细胞类型注释，ADTriage 可调用 CellTypist 进行 cluster-level 和 single-cell-level 注释。
+`CD45isoforms` assay 必须包含以下四个 feature：
 
-### 2.2 Feature Barcode reference 文件
+```text
+PTPRC-RA
+PTPRC-RB
+PTPRC-RC
+PTPRC-RO
+```
 
-第二个输入为 Cell Ranger 上游分析时使用的 `FB_ref.csv` 文件。该文件应符合 10x Genomics Feature Barcode reference 格式，至少包含以下列：
+Seurat metadata 中必须包含至少 **1** 个用户指定的分组列，例如：
+
+```text
+sample
+seurat_clusters
+manual_annotation
+treatment
+disease_status
+celltype_major
+celltype_minor
+```
+
+用户指定多少个分组列，ADTriage 就会针对多少种分组方式绘图和计算统计结果。
+
+示例配置：
+
+```yaml
+input:
+  seurat_rds: "data/qc_seurat.rds"
+
+assays:
+  rna_assay: "RNA"
+  adt_assay: "ADT"
+  cd45_isoform_assay: "CD45isoforms"
+
+group_by:
+  - "seurat_clusters"
+  - "manual_annotation"
+  - "sample"
+```
+
+---
+
+### 2.2 FB_ref.csv
+
+`FB_ref.csv` 是运行 Cell Ranger 上游分析时使用的 feature reference 文件。
+该文件至少需要包含以下列：
 
 ```text
 id
@@ -55,23 +132,545 @@ sequence
 feature_type
 ```
 
-ADTriage 会读取 `id` 和 `name` 字段，构建 ADT feature 与 gene symbol、CD45 isoform 或 control feature 的映射关系。
+示例：
+
+```csv
+id,name,read,pattern,sequence,feature_type
+FADT0038,mAOC-CD8a,R2,5PNNNNNNNNNN,ACGT...,Antibody Capture
+FADT0039,mAOC-CD3,R2,5PNNNNNNNNNN,TGCA...,Antibody Capture
+FADT0040,mAOC-CD45RA,R2,5PNNNNNNNNNN,GGCC...,Antibody Capture
+```
+
+其中 `id` 是 ADTriage 中最重要的关联键。
+后续 `mAOC_gene_symbol_map.csv` 会通过 `id` 与 `FB_ref.csv` 进行关联。
 
 ---
 
-## 3. 输出结果
+### 2.3 mAOC_gene_symbol_map.csv
 
-ADTriage 的主要输出为一组逐步递进的表格和图形文件。每一步均生成新文件，不直接覆盖上一步结果。
+`mAOC_gene_symbol_map.csv` 是用户额外提供的 ADT id 到 gene symbol 的映射表。
+该表第一列 `id` 必须与 `FB_ref.csv` 中的 `id` 对应。
 
-### 3.1 ADT feature 映射表
+必须包含以下列：
 
 ```text
-adt_feature_mapping.tsv
+id
+genesymbol
+genesymbol_source
+notes
+last_seen_name
+last_seen_reference
+updated_at
 ```
 
-该表记录每个 ADT feature 的基础注释信息。
+示例：
 
-推荐字段如下：
+```csv
+id,genesymbol,genesymbol_source,notes,last_seen_name,last_seen_reference,updated_at
+FADT0038,CD8A,reference:对应基因名,,mAOC-CD8a,抗体信息对照表260611-FY.xlsx,
+FADT0039,CD3E,reference:对应基因名,,mAOC-CD3,抗体信息对照表260611-FY.xlsx,
+FADT0040,PTPRC,reference:对应基因名,,mAOC-CD45RA,抗体信息对照表260611-FY.xlsx,
+FADT0041,CD80,reference:对应基因名,,mAOC-CD80,抗体信息对照表260611-FY.xlsx,
+FADT0042,CR2,reference:对应基因名,,mAOC-CD21,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+```
+
+该文件的作用是：
+
+```text
+1. 优先通过 id 关联 ADT feature 与 gene symbol
+2. 减少大模型逐行判断 ADT 名称的 token 消耗
+3. 保留 gene symbol 来源、历史名称和人工备注
+4. 为后续人工审查提供可追溯证据
+```
+
+---
+
+## 3. ADT feature 映射规则
+
+ADTriage 的第一步是构建 ADT feature 映射表。
+
+映射优先级如下：
+
+```text
+1. 通过 FB_ref.csv$id 与 mAOC_gene_symbol_map.csv$id 关联 gene symbol
+2. 对 CD45 / CD45 isoform 相关特征应用规则判断
+3. 对空字段、无法识别字段、对照抗体字段应用规则判断
+4. 仅对 unresolved / ambiguous 条目调用大模型
+5. 大模型判断结果进入人工审查表
+```
+
+---
+
+### 3.1 普通 ADT feature
+
+对于可以明确映射到 human gene symbol 的 ADT，例如：
+
+```text
+CD3   -> CD3E / CD3D / CD3G，依据抗体实际 target 决定
+CD4   -> CD4
+CD8a  -> CD8A
+CD14  -> CD14
+CD19  -> CD19
+CD34  -> CD34
+CD38  -> CD38
+CD80  -> CD80
+CD21  -> CR2
+```
+
+此类 feature 的验证方式为：
+
+```text
+ADT assay 中的对应 ADT feature
+vs
+RNA assay 中的对应 gene symbol
+```
+
+输出字段中：
+
+```text
+target_class = gene
+validation_assay = RNA
+validation_feature = 对应 human gene symbol
+```
+
+---
+
+### 3.2 CD45 总表达
+
+如果 ADT feature 是 CD45 总表达，而不是 CD45RA、CD45RB、CD45RC、CD45RO 等剪接变体，则对应 gene symbol 为：
+
+```text
+PTPRC
+```
+
+此类 feature 可以使用 RNA assay 中的 `PTPRC` 作为验证特征。
+
+输出字段中：
+
+```text
+target_class = gene
+human_gene_symbol = PTPRC
+validation_assay = RNA
+validation_feature = PTPRC
+```
+
+---
+
+### 3.3 CD45 剪接变体
+
+如果 ADT feature 是 CD45 剪接变体，例如：
+
+```text
+CD45RA
+CD45RB
+CD45RC
+CD45RO
+```
+
+则不应将其简单视为普通 `PTPRC` gene-level RNA 表达验证。
+
+此类 feature 的 gene symbol 可以记录为：
+
+```text
+PTPRC
+```
+
+但其主要验证特征应来自 `CD45isoforms` assay。
+
+映射规则：
+
+```text
+CD45RA -> CD45isoforms: PTPRC-RA
+CD45RB -> CD45isoforms: PTPRC-RB
+CD45RC -> CD45isoforms: PTPRC-RC
+CD45RO -> CD45isoforms: PTPRC-RO
+```
+
+输出字段中：
+
+```text
+target_class = cd45_isoform
+human_gene_symbol = PTPRC
+validation_assay = CD45isoforms
+validation_feature = PTPRC-RA / PTPRC-RB / PTPRC-RC / PTPRC-RO
+```
+
+注意：
+CD45 isoform feature 的 RNA–ADT correlation 不应使用 `RNA:PTPRC` 作为唯一判定依据。
+`RNA:PTPRC` 代表 PTPRC gene-level 总表达，不能区分 RA、RB、RC、RO isoform epitope。
+
+---
+
+### 3.4 Spike-in、IgFc、isotype 和其他对照
+
+对于以下类型：
+
+```text
+SPIKE
+Spike
+IgG
+IgFc
+isotype
+control
+negative control
+hashing control
+background control
+```
+
+此类 feature 通常不应强制映射到 human gene symbol。
+
+输出字段中：
+
+```text
+target_class = control
+human_gene_symbol = NA
+validation_assay = none
+validation_feature = NA
+needs_manual_review = TRUE 或 FALSE，取决于用户规则
+```
+
+如果用户提供了 `genesymbol`，例如：
+
+```text
+SPIKE-RBD1-S2E12
+SPIKE-NTD-4A8
+SPIKE-FP-76E1
+```
+
+则 ADTriage 保留该字段，但不会将其视为 human gene symbol。
+
+建议输出：
+
+```text
+target_class = spike_control
+human_gene_symbol = NA
+external_target_name = SPIKE-RBD1-S2E12
+validation_assay = none
+```
+
+---
+
+### 3.5 无法判断或歧义 feature
+
+如果 feature 无法通过以下方式确定：
+
+```text
+1. mAOC_gene_symbol_map.csv
+2. CD45 isoform 规则
+3. control / spike / isotype 规则
+4. 本地 marker dictionary
+```
+
+则进入大模型辅助判断。
+
+大模型只接收压缩后的信息：
+
+```text
+feature_id
+feature_name
+last_seen_name
+genesymbol
+genesymbol_source
+notes
+feature_type
+```
+
+大模型输出必须为结构化 JSON，例如：
+
+```json
+{
+  "feature_id": "FADT0000",
+  "feature_name": "mAOC-unknown",
+  "target_class": "ambiguous",
+  "human_gene_symbol": null,
+  "validation_assay": "manual",
+  "validation_feature": null,
+  "confidence": 0.42,
+  "reason": "Feature name does not provide enough information to infer a unique human gene symbol.",
+  "needs_manual_review": true
+}
+```
+
+当 `confidence < 0.8` 时，必须进入人工审查。
+
+---
+
+## 4. 输出目录结构
+
+推荐输出目录：
+
+```text
+ADTriage_output/
+├── 00_input_validation/
+│   ├── input_validation_report.tsv
+│   └── assay_feature_summary.tsv
+├── 01_feature_mapping/
+│   ├── adt_feature_mapping.initial.tsv
+│   ├── adt_feature_mapping.llm_review.tsv
+│   └── adt_feature_mapping.review_ready.tsv
+├── 02_feature_plots/
+│   ├── group_by_seurat_clusters/
+│   ├── group_by_manual_annotation/
+│   └── group_by_sample/
+├── 03_group_summary/
+│   ├── adt_group_summary.tsv
+│   ├── rna_group_summary.tsv
+│   └── cd45isoform_group_summary.tsv
+├── 04_signal_consistency/
+│   ├── rna_adt_correlation_summary.tsv
+│   ├── cd45isoform_adt_correlation_summary.tsv
+│   └── consistency_scatter_plots/
+├── 05_distribution_metrics/
+│   ├── adt_distribution_metrics.tsv
+│   ├── adt_gmm_metrics.tsv
+│   └── adt_density_plots/
+├── 06_prior_review/
+│   ├── marker_prior_review.tsv
+│   └── marker_prior_review.llm.jsonl
+├── 07_final_triage/
+│   ├── final_adt_triage_table.tsv
+│   ├── final_adt_triage_table.xlsx
+│   └── manual_review_table.tsv
+└── report/
+    ├── ADTriage_report.html
+    └── ADTriage_report.pdf
+```
+
+---
+
+## 5. 核心输出表
+
+### 5.1 adt_feature_mapping.initial.tsv
+
+该表由 `FB_ref.csv`、`mAOC_gene_symbol_map.csv` 和规则映射生成。
+
+建议字段：
+
+```text
+feature_id
+feature_name
+feature_type
+genesymbol_from_map
+genesymbol_source
+last_seen_name
+last_seen_reference
+target_class
+human_gene_symbol
+external_target_name
+validation_assay
+validation_feature
+mapping_method
+mapping_confidence
+mapping_evidence
+needs_llm_review
+needs_manual_review
+```
+
+---
+
+### 5.2 adt_feature_mapping.review_ready.tsv
+
+该表在大模型辅助判断后生成，但仍不是最终结果。
+
+建议字段：
+
+```text
+feature_id
+feature_name
+target_class
+human_gene_symbol
+external_target_name
+validation_assay
+validation_feature
+mapping_method
+mapping_confidence
+llm_suggested_target_class
+llm_suggested_gene_symbol
+llm_confidence
+llm_reason
+needs_manual_review
+manual_curated_target_class
+manual_curated_gene_symbol
+manual_notes
+```
+
+---
+
+### 5.3 rna_adt_correlation_summary.tsv
+
+针对普通 gene-level ADT feature，计算 ADT CLR 信号与 RNA log-normalized 信号在不同分组变量下的一致性。
+
+每个散点代表一个分组水平，例如一个 cluster、一个 cell type 或一个 sample。
+
+建议字段：
+
+```text
+feature_id
+feature_name
+human_gene_symbol
+group_by
+n_groups
+min_cells_per_group
+pearson_r
+pearson_p
+spearman_r
+spearman_p
+linear_model_slope
+linear_model_intercept
+linear_model_r2
+correlation_status
+```
+
+推荐规则：
+
+```text
+n_groups < 5:
+  correlation_status = insufficient_groups
+
+spearman_r >= 0.6:
+  correlation_status = concordant
+
+0.3 <= spearman_r < 0.6:
+  correlation_status = weakly_concordant
+
+spearman_r < 0.3:
+  correlation_status = discordant
+```
+
+阈值可以在配置文件中调整。
+
+---
+
+### 5.4 cd45isoform_adt_correlation_summary.tsv
+
+针对 CD45 isoform ADT feature，计算 ADT CLR 信号与 `CD45isoforms` assay 中对应 feature 的一致性。
+
+建议字段：
+
+```text
+feature_id
+feature_name
+cd45_isoform
+validation_feature
+group_by
+n_groups
+pearson_r
+pearson_p
+spearman_r
+spearman_p
+linear_model_slope
+linear_model_r2
+correlation_status
+```
+
+其中：
+
+```text
+CD45RA -> PTPRC-RA
+CD45RB -> PTPRC-RB
+CD45RC -> PTPRC-RC
+CD45RO -> PTPRC-RO
+```
+
+---
+
+### 5.5 adt_distribution_metrics.tsv
+
+该表记录每个 ADT feature 的 CLR 分布指标。
+
+建议字段：
+
+```text
+feature_id
+feature_name
+target_class
+n_cells
+mean_clr
+median_clr
+sd_clr
+q05_clr
+q25_clr
+q75_clr
+q95_clr
+dynamic_range_clr
+positive_rate
+negative_component_mean
+positive_component_mean
+negative_component_sd
+positive_component_sd
+gmm_n_components
+gmm_delta_mu
+gmm_separation_index
+gmm_overlap_area
+snr_raw
+tnr_raw
+pos_cv
+distribution_status
+```
+
+推荐解释：
+
+```text
+dynamic_range_clr:
+  ADT CLR 信号的动态范围
+
+positive_rate:
+  根据阈值判定的阳性细胞比例
+
+gmm_delta_mu:
+  阳性成分均值 - 阴性成分均值
+
+gmm_separation_index:
+  双峰分离程度
+
+snr_raw:
+  raw ADT count 层面的 signal-to-noise ratio
+
+tnr_raw:
+  true negative ratio 或 background ratio，具体定义需在配置文件中固定
+```
+
+---
+
+### 5.6 marker_prior_review.tsv
+
+该表用于记录每个 ADT feature 根据先验知识预期表达的细胞群。
+
+注意：
+ADTriage 不负责产生细胞注释。
+该表中的细胞类型或分组名称来自用户指定的 Seurat metadata 分组列。
+
+建议字段：
+
+```text
+feature_id
+feature_name
+target_class
+human_gene_symbol
+group_by
+observed_positive_groups
+expected_positive_groups
+expected_negative_groups
+prior_confidence
+prior_source
+prior_reason
+prior_consistency_score
+needs_manual_review
+```
+
+如果大模型无法以 `confidence >= 0.8` 判断预期表达群，则：
+
+```text
+needs_manual_review = TRUE
+```
+
+---
+
+### 5.7 final_adt_triage_table.tsv
+
+最终汇总表。
+
+建议字段：
 
 ```text
 feature_id
@@ -79,772 +678,678 @@ feature_name
 feature_type
 target_class
 human_gene_symbol
+external_target_name
 validation_assay
 validation_feature
-mapping_method
 mapping_confidence
-mapping_evidence
-needs_manual_review
-```
-
-其中 `target_class` 可取以下值：
-
-```text
-gene
-cd45_isoform
-control
-hashtag
-unknown
-ambiguous
-```
-
-### 3.2 RNA–ADT 相关性结果表
-
-```text
-rna_adt_correlation_summary.tsv
-```
-
-该表记录每个 ADT 与其对应 RNA gene 或 CD45 isoform feature 的信号一致性。
-
-推荐字段如下：
-
-```text
-feature_id
-feature_name
-validation_feature
-annotation_level
-n_celltypes
-min_cells_per_type
-pearson_r
-spearman_r
-linear_model_slope
-linear_model_intercept
-r_squared
-correlation_status
-```
-
-其中 `annotation_level` 包括：
-
-```text
-cluster_level
-single_cell_level
-```
-
-### 3.3 ADT 分布指标表
-
-```text
-adt_distribution_metrics.tsv
-```
-
-该表记录每个 ADT 的 CLR 分布、双峰拟合、阳性率和信噪比等指标。
-
-推荐字段如下：
-
-```text
-feature_id
-feature_name
-n_components_selected
-mu_negative
-mu_positive
-sd_negative
-sd_positive
-threshold
-positive_rate
-separation_index
-overlap_area
+best_group_by
+rna_adt_spearman_r
+cd45isoform_adt_spearman_r
+gmm_separation_index
 snr_raw
-tnr_raw
 dynamic_range_clr
-positive_cv
-distribution_status
-```
-
-### 3.4 Marker 先验表达审查表
-
-```text
-marker_prior_review.tsv
-```
-
-该表记录每个 ADT 理论上应表达的细胞类型及其与观测结果的一致性。
-
-推荐字段如下：
-
-```text
-feature_id
-feature_name
-expected_positive_celltypes
-expected_negative_celltypes
-observed_positive_celltypes
-observed_negative_celltypes
-prior_confidence
-prior_evidence_level
-prior_consistency_score
-needs_manual_review
-review_reason
-```
-
-### 3.5 最终 ADT 质量标签表
-
-```text
-final_adt_qc_labels.tsv
-```
-
-该表为 ADTriage 的核心输出，整合映射、相关性、分布和先验表达信息，为每个 ADT feature 分配最终标签。
-
-推荐字段如下：
-
-```text
-feature_id
-feature_name
-target_class
-human_gene_symbol
-validation_assay
-validation_feature
-mapping_confidence
-cluster_spearman_r
-single_cell_spearman_r
-separation_index
-snr_raw
 positive_rate
 prior_consistency_score
+final_score
 final_label
 final_confidence
 review_reason
-```
-
-`final_label` 可取以下值：
-
-```text
-correct
-suspicious
-wrong
-no_signal
-control
-manual_review
+needs_manual_review
+manual_final_label
+manual_notes
 ```
 
 ---
 
-## 4. 工作流概览
+## 6. 主要分析流程
 
-ADTriage 的分析流程分为 9 个步骤。
+### Step 0. 输入检查
 
-### 4.1 输入检查
-
-检查 Seurat 对象和 `FB_ref.csv` 是否满足运行要求。
-
-检查内容包括：
+检查内容：
 
 ```text
-Seurat object 是否可读取
-RNA assay 是否存在
-ADT assay 是否存在
-CD45-isoform assay 是否存在
-ADT feature 是否能与 FB_ref.csv 对应
-counts/data slot 是否存在
-metadata 中是否已有 cluster 或 cell type 信息
+1. Seurat 对象是否可读取
+2. RNA assay 是否存在
+3. ADT assay 是否存在
+4. CD45isoforms assay 是否存在
+5. CD45isoforms assay 是否包含 PTPRC-RA、PTPRC-RB、PTPRC-RC、PTPRC-RO
+6. 用户指定的 group_by metadata 列是否存在
+7. FB_ref.csv 是否包含必要列
+8. mAOC_gene_symbol_map.csv 是否包含必要列
+9. FB_ref.csv$id 是否能与 ADT assay feature 对应
+10. mAOC_gene_symbol_map.csv$id 是否能与 FB_ref.csv$id 对应
 ```
 
-### 4.2 构建 ADT 与验证特征映射表
-
-读取 `FB_ref.csv`，根据 ADT 名称构建 feature-level 映射表。
-
-映射规则包括：
-
-1. 普通 ADT marker 映射到对应 human gene symbol。
-2. CD45 映射到 `PTPRC`。
-3. CD45RA、CD45RO、CD45RB、CD45RC 等 CD45 isoform 不映射为独立 gene symbol，而是映射到 `CD45-isoform` assay 中的对应 feature。
-4. isotype control、IgG control、Fc control、spike-in 等特征标记为 `control`。
-5. 无法自动判断的特征标记为 `ambiguous` 或 `unknown`，进入人工审查。
-
-### 4.3 运行标准化处理
-
-使用 `scop` R 包中的 `standard_scop` 函数对 Seurat 对象进行标准化处理，生成用于后续分析的新 Seurat 对象。
-
-### 4.4 运行 CellTypist 注释
-
-调用 `RunCellTypist`，基于指定 `.pkl` 模型文件进行细胞类型注释。
-
-ADTriage 同时保存两类注释结果：
+失败条件：
 
 ```text
-cluster-level annotation
-single-cell-level annotation
+RNA assay 缺失
+ADT assay 缺失
+CD45isoforms assay 缺失
+用户指定 group_by 列全部缺失
+FB_ref.csv 缺少 id 或 name 列
+mAOC_gene_symbol_map.csv 缺少 id 或 genesymbol 列
 ```
 
-两类注释结果分别用于后续 RNA–ADT 相关性分析和 marker 先验表达一致性分析。
+---
 
-### 4.5 绘制配对 FeaturePlot
+### Step 1. 构建 ADT feature 映射表
 
-对每个 ADT feature 绘制配对 FeaturePlot。
-
-常见图形组合包括：
+输入：
 
 ```text
-ADT CLR signal
-RNA log-normalized signal
-CD45 isoform signal
-CellTypist cluster-level annotation
-CellTypist single-cell-level annotation
+FB_ref.csv
+mAOC_gene_symbol_map.csv
+规则字典
+可选：大模型辅助判断
 ```
 
-每个 ADT 输出独立图形，所有图形合并保存为 PDF。
-
-### 4.6 计算 RNA–ADT 或 isoform–ADT 相关性
-
-基于细胞类型进行 pseudobulk 聚合。
-
-每个散点代表一种细胞类型：
+输出：
 
 ```text
-x = mean RNA log-normalized expression 或 mean CD45 isoform signal
-y = mean ADT CLR signal
+01_feature_mapping/adt_feature_mapping.initial.tsv
+01_feature_mapping/adt_feature_mapping.review_ready.tsv
 ```
 
-分别基于 cluster-level 和 single-cell-level 注释计算：
+核心逻辑：
+
+```text
+1. 以 FB_ref.csv 为主表
+2. 使用 id 左连接 mAOC_gene_symbol_map.csv
+3. 对 CD45 / CD45RA / CD45RB / CD45RC / CD45RO 应用规则
+4. 对 spike、IgFc、isotype、control 应用对照规则
+5. 对无法判断的条目调用大模型
+6. 所有 confidence < 0.8 的条目进入人工审查
+```
+
+---
+
+### Step 2. 绘制 ADT 与验证特征图
+
+对于每个 ADT feature，根据 `validation_assay` 绘制配对图。
+
+普通 gene-level ADT：
+
+```text
+ADT feature CLR signal
+RNA gene log-normalized signal
+```
+
+CD45 isoform ADT：
+
+```text
+ADT feature CLR signal
+CD45isoforms assay 中对应 isoform signal
+```
+
+control / spike feature：
+
+```text
+仅绘制 ADT feature signal
+不绘制 RNA 验证特征
+```
+
+每个 `group_by` 列单独输出一套图。
+
+示例：
+
+```text
+02_feature_plots/group_by_seurat_clusters/FADT0038_CD8A.pdf
+02_feature_plots/group_by_manual_annotation/FADT0038_CD8A.pdf
+02_feature_plots/group_by_sample/FADT0038_CD8A.pdf
+```
+
+---
+
+### Step 3. 按分组变量计算 pseudobulk summary
+
+对每个用户指定的 `group_by` 列，计算每个分组水平中的平均信号。
+
+示例：
+
+```text
+group_by = seurat_clusters
+group_level = 0, 1, 2, 3, ...
+```
+
+普通 ADT：
+
+```text
+mean_ADT_CLR
+mean_RNA_lognormalized
+n_cells
+```
+
+CD45 isoform ADT：
+
+```text
+mean_ADT_CLR
+mean_CD45isoform_signal
+n_cells
+```
+
+输出：
+
+```text
+03_group_summary/adt_group_summary.tsv
+03_group_summary/rna_group_summary.tsv
+03_group_summary/cd45isoform_group_summary.tsv
+```
+
+---
+
+### Step 4. 计算信号一致性
+
+普通 gene-level ADT：
+
+```text
+ADT CLR group mean
+vs
+RNA log-normalized group mean
+```
+
+CD45 isoform ADT：
+
+```text
+ADT CLR group mean
+vs
+CD45isoforms group mean
+```
+
+推荐统计量：
 
 ```text
 Pearson correlation
 Spearman correlation
 linear model slope
-R²
-n_celltypes
+linear model R²
+n_groups
+min_cells_per_group
 ```
 
-### 4.7 构建 marker 先验表达审查结果
-
-根据每个 ADT 的 target 和实际出现的细胞类型，判断该 marker 理论上应表达于哪些细胞类型。
-
-该步骤输出：
+散点图要求：
 
 ```text
-expected_positive_celltypes
-expected_negative_celltypes
-observed_positive_celltypes
-prior_consistency_score
-prior_confidence
-manual_review flag
+1. 每个点代表一个 group level
+2. x 轴为验证特征信号
+3. y 轴为 ADT CLR 信号
+4. 使用最小二乘法拟合直线
+5. 标注 Spearman r、Pearson r、R²、n_groups
 ```
 
-对于置信度低于阈值的判断，标记为人工审查。
-
-默认阈值：
+输出：
 
 ```text
-prior_confidence < 0.80 -> manual_review
-```
-
-### 4.8 评估 ADT CLR 分布指标
-
-对每个 ADT 的 CLR 值分布进行建模，评估是否存在可分离的阴性群体和阳性群体。
-
-推荐指标包括：
-
-```text
-positive_rate
-separation_index
-overlap_area
-snr_raw
-tnr_raw
-dynamic_range_clr
-positive_cv
-```
-
-如果 ADT 分布不具备可分离信号，则标记为 `no_signal` 或 `suspicious`。
-
-### 4.9 综合打分与最终标签
-
-整合以下信息：
-
-```text
-feature mapping confidence
-RNA–ADT correlation
-isoform–ADT correlation
-ADT distribution metrics
-cell type prior consistency
-control feature status
-manual review flag
-```
-
-最终为每个 ADT feature 分配标签：
-
-```text
-correct
-suspicious
-wrong
-no_signal
-control
-manual_review
+04_signal_consistency/rna_adt_correlation_summary.tsv
+04_signal_consistency/cd45isoform_adt_correlation_summary.tsv
+04_signal_consistency/consistency_scatter_plots/
 ```
 
 ---
 
-## 5. 推荐项目结构
+### Step 5. 评估 ADT CLR 分布指标
+
+对每个 ADT feature 计算分布指标。
+
+基础指标：
+
+```text
+mean
+median
+standard deviation
+quantile 5%
+quantile 25%
+quantile 75%
+quantile 95%
+dynamic range
+positive rate
+```
+
+模型指标：
+
+```text
+Gaussian mixture model components
+negative component mean
+positive component mean
+component separation
+overlap area
+SNR
+TNR
+positive CV
+```
+
+输出：
+
+```text
+05_distribution_metrics/adt_distribution_metrics.tsv
+05_distribution_metrics/adt_gmm_metrics.tsv
+05_distribution_metrics/adt_density_plots/
+```
+
+---
+
+### Step 6. 先验表达审查
+
+对于每个非 control ADT feature，ADTriage 根据以下信息判断其理论预期表达群：
+
+```text
+feature_name
+human_gene_symbol
+target_class
+用户指定 group_by 列中的 group levels
+观察到的 ADT 阳性 group
+观察到的 RNA 或 CD45isoform 高表达 group
+```
+
+优先级：
+
+```text
+1. 本地 marker prior 配置文件
+2. 项目内已有人工审查记录
+3. 大模型辅助判断
+4. 人工审查
+```
+
+大模型只处理缺失或不确定项。
+当大模型置信度 `< 0.8` 时，必须进入人工审查。
+
+输出：
+
+```text
+06_prior_review/marker_prior_review.tsv
+06_prior_review/marker_prior_review.llm.jsonl
+```
+
+---
+
+### Step 7. 最终 triage
+
+最终标签由规则门控和加权评分共同决定。
+
+强制规则示例：
+
+```text
+1. target_class = control 或 spike_control
+   -> final_label = control
+
+2. mapping_confidence < 0.8
+   -> final_label = manual_review
+
+3. validation_assay = RNA 且 RNA feature 不存在
+   -> final_label = manual_review
+
+4. validation_assay = CD45isoforms 且 isoform feature 不存在
+   -> final_label = manual_review
+
+5. ADT 分布无可检测阳性峰，positive_rate 低于阈值
+   -> final_label = no_signal
+
+6. ADT 阳性 group 与先验预期 group 冲突
+   -> final_label = suspicious 或 wrong
+
+7. RNA–ADT correlation 低，但 ADT 属于 CD45 isoform
+   -> 不作为单独负面证据
+```
+
+推荐标签定义：
+
+```text
+correct:
+  映射明确，ADT 信号存在，分布可分离，观察阳性群与先验一致。
+
+suspicious:
+  映射基本明确，但至少一个核心证据不一致，例如 RNA–ADT 相关性低、分布分离弱或阳性群偏离预期。
+
+wrong:
+  映射明确但观察信号与预期方向冲突，或疑似 feature 名称、id、抗体 target 错配。
+
+no_signal:
+  ADT feature 无可检测阳性信号，或阳性比例低于设定阈值。
+
+control:
+  spike、IgFc、isotype、negative control 或其他实验对照。
+
+manual_review:
+  映射不确定、证据不足、大模型置信度不足或规则冲突。
+```
+
+输出：
+
+```text
+07_final_triage/final_adt_triage_table.tsv
+07_final_triage/manual_review_table.tsv
+```
+
+---
+
+## 7. 配置文件示例
+
+推荐使用 `config/ADTriage.yaml` 管理参数。
+
+```yaml
+project:
+  name: "ADTriage"
+  description: "ADT feature-level triage workflow for CITE-seq quality assessment"
+  species: "human"
+
+input:
+  seurat_rds: "data/qc_seurat.rds"
+  fb_ref_csv: "data/FB_ref.csv"
+  maoc_gene_symbol_map_csv: "data/mAOC_gene_symbol_map.csv"
+
+assays:
+  rna_assay: "RNA"
+  adt_assay: "ADT"
+  cd45_isoform_assay: "CD45isoforms"
+
+cd45_isoforms:
+  CD45RA: "PTPRC-RA"
+  CD45RB: "PTPRC-RB"
+  CD45RC: "PTPRC-RC"
+  CD45RO: "PTPRC-RO"
+
+group_by:
+  - "seurat_clusters"
+  - "manual_annotation"
+  - "sample"
+
+mapping:
+  confidence_cutoff_manual_review: 0.8
+  use_maoc_gene_symbol_map: true
+  use_rule_based_mapping: true
+  use_llm_for_unresolved_only: true
+
+correlation:
+  min_cells_per_group: 20
+  min_groups_for_correlation: 5
+  methods:
+    - "pearson"
+    - "spearman"
+
+distribution:
+  use_gmm: true
+  max_gmm_components: 3
+  min_positive_rate: 0.005
+  min_gmm_separation_index: 1.0
+
+llm:
+  enabled: true
+  confidence_cutoff: 0.8
+  cache_enabled: true
+  cache_dir: "ADTriage_output/cache/llm"
+
+output:
+  outdir: "ADTriage_output"
+  overwrite: false
+```
+
+---
+
+## 8. 推荐运行方式
+
+推荐入口：
+
+```bash
+Rscript scripts/run_ADTriage.R \
+  --config config/ADTriage.yaml
+```
+
+推荐分步运行：
+
+```bash
+Rscript scripts/00_validate_input.R \
+  --config config/ADTriage.yaml
+
+Rscript scripts/01_build_feature_mapping.R \
+  --config config/ADTriage.yaml
+
+Rscript scripts/02_plot_features.R \
+  --config config/ADTriage.yaml
+
+Rscript scripts/03_group_summary.R \
+  --config config/ADTriage.yaml
+
+Rscript scripts/04_signal_consistency.R \
+  --config config/ADTriage.yaml
+
+Rscript scripts/05_distribution_metrics.R \
+  --config config/ADTriage.yaml
+
+Rscript scripts/06_prior_review.R \
+  --config config/ADTriage.yaml
+
+Rscript scripts/07_final_triage.R \
+  --config config/ADTriage.yaml
+```
+
+---
+
+## 9. 软件依赖
+
+### 9.1 R 依赖
+
+推荐 R 版本：
+
+```text
+R >= 4.3.0
+```
+
+核心 R 包：
+
+```r
+Seurat
+SeuratObject
+Matrix
+data.table
+dplyr
+tidyr
+stringr
+ggplot2
+patchwork
+cowplot
+mclust
+jsonlite
+yaml
+readr
+openxlsx
+```
+
+可选 R 包：
+
+```r
+mixtools
+flexmix
+pROC
+rmarkdown
+knitr
+```
+
+---
+
+### 9.2 Python 依赖
+
+如果启用大模型辅助判断或外部 gene symbol 查询，可配置 Python 环境。
+
+推荐 Python 版本：
+
+```text
+Python >= 3.10
+```
+
+核心 Python 包：
+
+```text
+pandas
+numpy
+pyyaml
+jsonschema
+requests
+```
+
+---
+
+## 10. 大模型调用原则
+
+ADTriage 中的大模型只用于低频、结构化、可审查的判断任务。
+
+允许大模型处理：
+
+```text
+1. 无法通过规则识别的 ADT feature 名称
+2. 无法确定的 gene symbol 映射
+3. marker prior 缺失时的预期表达群判断
+4. manual_review 行的解释性总结
+```
+
+禁止大模型处理：
+
+```text
+1. 原始表达矩阵
+2. 完整 Seurat 对象
+3. 逐细胞 metadata
+4. 大规模 FeaturePlot 图像
+5. 可由 R/Python 确定性计算完成的统计任务
+```
+
+大模型输出必须是 JSON 或 JSONL，并保留：
+
+```text
+model_name
+prompt_version
+input_hash
+confidence
+reason
+created_at
+```
+
+推荐缓存策略：
+
+```text
+cache_key = sha256(feature_id + feature_name + last_seen_name + prompt_version)
+```
+
+---
+
+## 11. 人工审查机制
+
+以下情况必须进入人工审查：
+
+```text
+1. mapping_confidence < 0.8
+2. llm_confidence < 0.8
+3. human_gene_symbol 为空且 target_class 不是 control
+4. validation_assay 指向的 feature 不存在
+5. RNA–ADT 或 CD45isoform–ADT 结果与先验表达冲突
+6. GMM 无法稳定拟合
+7. final_label = suspicious
+8. final_label = wrong
+9. final_label = manual_review
+```
+
+人工审查表：
+
+```text
+07_final_triage/manual_review_table.tsv
+```
+
+建议人工审查后填写：
+
+```text
+manual_final_label
+manual_curated_gene_symbol
+manual_curated_target_class
+manual_notes
+reviewer
+reviewed_at
+```
+
+---
+
+## 12. 推荐项目结构
 
 ```text
 ADTriage/
 ├── README.md
 ├── config/
-│   ├── config.yaml
+│   ├── ADTriage.yaml
 │   ├── marker_prior.yaml
-│   ├── cd45_isoform_map.yaml
+│   ├── cd45_isoform_rules.yaml
 │   └── scoring_rules.yaml
-├── R/
+├── scripts/
+│   ├── run_ADTriage.R
 │   ├── 00_validate_input.R
-│   ├── 01_standard_scop.R
-│   ├── 02_run_celltypist.R
-│   ├── 03_featureplot_pairs.R
-│   ├── 04_rna_adt_correlation.R
-│   ├── 05_adt_distribution_metrics.R
-│   └── 06_final_scoring.R
+│   ├── 01_build_feature_mapping.R
+│   ├── 02_plot_features.R
+│   ├── 03_group_summary.R
+│   ├── 04_signal_consistency.R
+│   ├── 05_distribution_metrics.R
+│   ├── 06_prior_review.R
+│   └── 07_final_triage.R
+├── R/
+│   ├── io.R
+│   ├── validation.R
+│   ├── mapping.R
+│   ├── plotting.R
+│   ├── correlation.R
+│   ├── distribution_metrics.R
+│   ├── scoring.R
+│   └── report.R
 ├── python/
-│   ├── parse_fb_ref.py
-│   ├── hgnc_query.py
-│   └── marker_prior_review.py
+│   ├── llm_mapping_review.py
+│   ├── llm_marker_prior_review.py
+│   └── validate_llm_json.py
 ├── prompts/
 │   ├── adt_mapping_review.md
 │   └── marker_prior_review.md
 ├── schemas/
-│   ├── adt_mapping.schema.json
-│   ├── marker_prior.schema.json
-│   └── final_qc.schema.json
-├── outputs/
-│   ├── tables/
-│   ├── figures/
-│   ├── reports/
-│   └── objects/
-└── SKILL.md
+│   ├── adt_mapping_review.schema.json
+│   ├── marker_prior_review.schema.json
+│   └── final_triage.schema.json
+├── tests/
+│   ├── test_feature_mapping.R
+│   ├── test_cd45isoform_rules.R
+│   └── test_distribution_metrics.R
+└── example/
+    ├── FB_ref.example.csv
+    ├── mAOC_gene_symbol_map.example.csv
+    └── ADTriage.example.yaml
 ```
 
 ---
 
-## 6. 配置文件示例
-
-推荐使用 `config/config.yaml` 统一管理输入、输出、assay 名称、阈值和工具路径。
-
-```yaml
-project:
-  name: "ADTriage"
-  species: "human"
-  genome: "GRCh38"
-
-input:
-  seurat_rds: "data/qc_seurat.rds"
-  fb_ref_csv: "data/FB_ref.csv"
-  celltypist_model_pkl: "ref/celltypist_model.pkl"
-
-assays:
-  rna_assay: "RNA"
-  adt_assay: "ADT"
-  cd45_isoform_assay: "CD45-isoform"
-
-metadata:
-  cluster_col: "seurat_clusters"
-  celltypist_cluster_col: "celltypist_cluster_label"
-  celltypist_single_cell_col: "celltypist_cell_label"
-
-tools:
-  Rscript: "/path/to/Rscript"
-  python: "/path/to/python"
-  celltypist: "/path/to/celltypist"
-
-reference:
-  hgnc_tsv: "ref/hgnc_complete_set.tsv"
-  marker_prior_yaml: "config/marker_prior.yaml"
-  cd45_isoform_map_yaml: "config/cd45_isoform_map.yaml"
-  scoring_rules_yaml: "config/scoring_rules.yaml"
-
-output:
-  outdir: "outputs"
-  table_dir: "outputs/tables"
-  figure_dir: "outputs/figures"
-  report_dir: "outputs/reports"
-  object_dir: "outputs/objects"
-  cache_dir: "outputs/cache"
-
-mapping:
-  confidence_cutoff_manual_review: 0.80
-  use_hgnc: true
-  use_llm_for_ambiguous_only: true
-
-cell_annotation:
-  run_celltypist: true
-  min_cells_per_type: 30
-
-correlation:
-  aggregation: "celltype_mean"
-  methods:
-    - "pearson"
-    - "spearman"
-  min_celltypes_for_correlation: 5
-
-distribution:
-  method: "gaussian_mixture"
-  max_components: 3
-  min_positive_rate: 0.005
-
-final_scoring:
-  manual_review_cutoff: 0.80
-  labels:
-    - "correct"
-    - "suspicious"
-    - "wrong"
-    - "no_signal"
-    - "control"
-    - "manual_review"
-```
-
----
-
-## 7. 依赖工具
-
-### 7.1 R 依赖
-
-```r
-Seurat
-Matrix
-data.table
-dplyr
-ggplot2
-patchwork
-cowplot
-future
-mclust
-jsonlite
-yaml
-scop
-```
-
-可选依赖：
-
-```r
-dsb
-ThresholdR
-ADTnorm
-CITESeQC
-mixtools
-flexmix
-pROC
-rmarkdown
-```
-
-### 7.2 Python 依赖
-
-```python
-pandas
-numpy
-scipy
-anndata
-scanpy
-celltypist
-pyyaml
-requests
-```
-
-可选依赖：
-
-```python
-mygene
-scvi-tools
-```
-
----
-
-## 8. 运行方式
-
-ADTriage 推荐按步骤运行，而不是一次性黑箱执行。
-
-### 8.1 检查输入
-
-```bash
-Rscript R/00_validate_input.R \
-  --config config/config.yaml
-```
-
-预期输出：
-
-```text
-outputs/tables/input_validation_summary.tsv
-```
-
-### 8.2 构建 ADT feature 映射表
-
-```bash
-python python/parse_fb_ref.py \
-  --config config/config.yaml
-```
-
-预期输出：
-
-```text
-outputs/tables/adt_feature_mapping.tsv
-```
-
-### 8.3 运行标准化处理
-
-```bash
-Rscript R/01_standard_scop.R \
-  --config config/config.yaml
-```
-
-预期输出：
-
-```text
-outputs/objects/seurat_standard_scop.rds
-```
-
-### 8.4 运行 CellTypist 注释
-
-```bash
-Rscript R/02_run_celltypist.R \
-  --config config/config.yaml
-```
-
-预期输出：
-
-```text
-outputs/objects/seurat_celltypist_annotated.rds
-outputs/tables/celltypist_annotation_summary.tsv
-```
-
-### 8.5 绘制配对 FeaturePlot
-
-```bash
-Rscript R/03_featureplot_pairs.R \
-  --config config/config.yaml
-```
-
-预期输出：
-
-```text
-outputs/figures/adt_featureplot_pairs.pdf
-```
-
-### 8.6 计算 RNA–ADT 相关性
-
-```bash
-Rscript R/04_rna_adt_correlation.R \
-  --config config/config.yaml
-```
-
-预期输出：
-
-```text
-outputs/tables/rna_adt_correlation_summary.tsv
-outputs/figures/rna_adt_correlation_scatter.pdf
-```
-
-### 8.7 计算 ADT 分布指标
-
-```bash
-Rscript R/05_adt_distribution_metrics.R \
-  --config config/config.yaml
-```
-
-预期输出：
-
-```text
-outputs/tables/adt_distribution_metrics.tsv
-outputs/figures/adt_distribution_density.pdf
-```
-
-### 8.8 综合打分
-
-```bash
-Rscript R/06_final_scoring.R \
-  --config config/config.yaml
-```
-
-预期输出：
-
-```text
-outputs/tables/final_adt_qc_labels.tsv
-```
-
----
-
-## 9. 标签定义
-
-### 9.1 correct
-
-该 ADT feature 满足以下主要条件：
-
-```text
-映射关系明确
-分布存在可识别阳性群体
-阳性细胞类型符合 marker 先验表达
-RNA–ADT 或 isoform–ADT 信号具有一致性
-无明显背景异常
-```
-
-### 9.2 suspicious
-
-该 ADT feature 存在部分异常，但不足以直接判定为错误。
-
-常见情况包括：
-
-```text
-分布可分离，但阳性细胞类型不完全符合预期
-RNA–ADT 相关性低，但 marker 本身可能存在 RNA/protein discordance
-positive_rate 异常偏高或偏低
-不同注释层级下结论不一致
-```
-
-### 9.3 wrong
-
-该 ADT feature 的观测信号与预期明显冲突。
-
-常见情况包括：
-
-```text
-阳性细胞类型与已知 marker 生物学背景冲突
-对应 RNA 或 isoform 信号完全不支持 ADT 分布
-feature 名称或 reference 映射存在高风险错误
-```
-
-### 9.4 no_signal
-
-该 ADT feature 缺乏可检测信号。
-
-常见情况包括：
-
-```text
-CLR 分布接近单峰背景
-positive_rate 低于阈值
-dynamic range 低
-SNR 低
-无明确阳性细胞群
-```
-
-### 9.5 control
-
-该 feature 为实验对照或技术对照。
-
-常见情况包括：
-
-```text
-isotype control
-IgG control
-Fc control
-spike-in
-hashtag
-non-targeting control
-```
-
-### 9.6 manual_review
-
-该 feature 需要人工审查。
-
-触发条件包括：
-
-```text
-mapping_confidence < 0.80
-prior_confidence < 0.80
-feature_name 无法自动解析
-marker 生物学背景存在歧义
-自动规则之间结论冲突
-```
-
----
-
-## 10. 设计原则
+## 13. 设计原则
 
 ADTriage 遵循以下原则：
 
-1. **每一步生成新表格，不覆盖上一步结果。**
-2. **所有标签必须可追溯到具体指标和规则。**
-3. **不使用 RNA–ADT correlation 单独判定 ADT 错误。**
-4. **CD45 isoform 不应强制映射为独立 human gene symbol。**
-5. **LLM 只用于模糊命名解析和 marker 先验表达审查，不读取原始表达矩阵。**
-6. **所有低置信度结果进入人工审查，而不是自动删除。**
-7. **最终结果用于 triage，不直接等同于统计学显著性检验结论。**
-
----
-
-## 11. 适用场景
-
-ADTriage 适用于以下数据类型：
-
 ```text
-CITE-seq
-Feature Barcode
-TotalSeq-A/B/C panel
-含 ADT assay 的 Seurat object
-含 CD45 isoform antibody panel 的单细胞数据
-多抗体 panel 混样设计
-```
-
-尤其适用于以下问题：
-
-```text
-判断 ADT panel 中哪些抗体信号可信
-检查 FB_ref.csv 是否存在 feature 命名或映射问题
-评估 CD45RA/CD45RO 等 isoform 抗体是否合理
-识别无信号或背景异常的 ADT feature
-为下游 ADT gating、WNN、marker-based annotation 提供质量依据
+1. 以 feature_id 为主键，保证 FB_ref.csv、mAOC_gene_symbol_map.csv、Seurat ADT feature 可追溯。
+2. 每一步生成新表，不直接覆盖上一阶段结果。
+3. 统计计算由 R/Python 完成，不交给大模型。
+4. 大模型只处理 unresolved / ambiguous / prior-missing 项。
+5. CD45 isoform 与 PTPRC gene-level 表达分开评估。
+6. correlation 是诊断证据，不是单独判定标准。
+7. 最终标签必须保留 review_reason。
+8. 所有低置信度结果进入人工审查。
 ```
 
 ---
 
-## 12. 局限性
+## 14. 最小可用输出
 
-ADTriage 的结果依赖于输入数据质量和参考信息完整性。
-
-主要限制包括：
-
-1. **RNA–protein discordance**
-   RNA 表达与表面蛋白表达并非总是一致。低相关性不等同于 ADT 错误。
-
-2. **细胞类型注释误差**
-   CellTypist 或 cluster annotation 错误会影响 marker prior consistency 评估。
-
-3. **稀有细胞类型不足**
-   当某个 marker 的理论阳性细胞类型在数据中细胞数不足时，无法可靠评估该 ADT 是否合理。
-
-4. **control feature 依赖实验设计**
-   spike-in、IgG、Fc block、isotype 等对照需要结合具体实验设计解释。
-
-5. **缺少训练数据时无法建立监督分类器**
-   第一版 ADTriage 使用规则和指标打分进行 triage，最终标签仍需人工审查确认。
-
----
-
-## 13. 推荐审查流程
-
-完成自动分析后，建议按以下顺序人工审查：
-
-1. 先检查 `manual_review` 和 `ambiguous` feature。
-2. 再检查 `wrong` 和 `suspicious` feature。
-3. 对 `no_signal` feature 查看 CLR density 和 FeaturePlot。
-4. 对 CD45 isoform feature 单独检查 `CD45-isoform` assay。
-5. 最后检查 `correct` feature 是否存在明显假阳性。
-
-人工审查后建议新增一列：
+ADTriage 的 MVP 至少应生成以下 5 个文件：
 
 ```text
-manual_label
+01_feature_mapping/adt_feature_mapping.review_ready.tsv
+04_signal_consistency/rna_adt_correlation_summary.tsv
+04_signal_consistency/cd45isoform_adt_correlation_summary.tsv
+05_distribution_metrics/adt_distribution_metrics.tsv
+07_final_triage/final_adt_triage_table.tsv
 ```
 
-并保留自动标签：
+其中最终主表为：
 
 ```text
-final_label
+07_final_triage/final_adt_triage_table.tsv
 ```
 
-不要直接覆盖自动结果。这样可以保留自动规则与人工判断之间的差异。
-
----
-
-## 14. 最小可用版本
-
-ADTriage 的最小可用版本应至少输出以下 5 个文件：
-
-```text
-outputs/tables/adt_feature_mapping.tsv
-outputs/tables/rna_adt_correlation_summary.tsv
-outputs/tables/adt_distribution_metrics.tsv
-outputs/tables/marker_prior_review.tsv
-outputs/tables/final_adt_qc_labels.tsv
-```
-
-这 5 个文件构成 ADT feature-level triage 的核心结果。后续版本可继续增加 PDF report、HTML report、交互式审查界面和监督学习模型。
+该表是 ADTriage 的核心结果，用于后续人工审查、报告生成和 ADT panel 质量评估。

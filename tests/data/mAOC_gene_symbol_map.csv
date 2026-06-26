@@ -1,0 +1,677 @@
+﻿id,genesymbol,genesymbol_source,notes,last_seen_name,last_seen_reference,updated_at
+FADT0025,SPIKE-RBD1-S2E12,reference:对应基因名,,S-RBD1-S2E12,抗体信息对照表260611-FY.xlsx,
+FADT0027,SPIKE-RBD2-2196,reference:对应基因名,,S-RBD2-2196,抗体信息对照表260611-FY.xlsx,
+FADT0029,SPIKE-RBD3-2130,reference:对应基因名,,S-RBD3-2130,抗体信息对照表260611-FY.xlsx,
+FADT0031,SPIKE-RBD4-EY6A,reference:对应基因名,,S-RBD4-EY6A,抗体信息对照表260611-FY.xlsx,
+FADT0032,SPIKE-NTD-4A8,reference:对应基因名,,S-NTD-4A8,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0033,SPIKE-NTD-C1520,reference:对应基因名,,S-NTD-C1520,抗体信息对照表260611-FY.xlsx,
+FADT0034,SPIKE-SH-S2P6,reference:对应基因名,,S-SH-S2P6,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0035,SPIKE-SH-CC40.8,reference:对应基因名,,S-SH-CC40.8,抗体信息对照表260611-FY.xlsx,
+FADT0036,SPIKE-FP-76E1,reference:对应基因名,,S-FP-76E1,抗体信息对照表260611-FY.xlsx,
+FADT0037,SPIKE-FP-C77G12,reference:对应基因名,,S-FP-C77G12,抗体信息对照表260611-FY.xlsx,
+FADT0038,CD8A,reference:对应基因名,,mAOC-CD8a,抗体信息对照表260611-FY.xlsx,
+FADT0039,CD3E,reference:对应基因名,,mAOC-CD3,抗体信息对照表260611-FY.xlsx,
+FADT0040,PTPRC,reference:对应基因名,,mAOC-CD45RA,抗体信息对照表260611-FY.xlsx,
+FADT0041,CD80,reference:对应基因名,,mAOC-CD80,抗体信息对照表260611-FY.xlsx,
+FADT0042,CR2,reference:对应基因名,,mAOC-CD21,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0043,CD19,reference:对应基因名,,mAOC-CD19,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0044,ITGAX,reference:对应基因名,,mAOC-CD11c,抗体信息对照表260611-FY.xlsx,
+FADT0045,NCAM1,reference:对应基因名,,mAOC-CD56,抗体信息对照表260611-FY.xlsx,
+FADT0046,CD4,reference:对应基因名,,mAOC-CD4,抗体信息对照表260611-FY.xlsx,
+FADT0047,HLA-DRA,reference:对应基因名,,mAOC-HLA-DRA,抗体信息对照表260611-FY.xlsx,
+FADT0050,CD72,reference:对应基因名,,mAOC-CD72,抗体信息对照表260611-FY.xlsx,
+FADT0053,CD19,reference:对应基因名,,mAOC-CD19,抗体信息对照表260611-FY.xlsx,
+FADT0055,NCAM1,reference:对应基因名,,mAOC-CD56,抗体信息对照表260611-FY.xlsx,
+FADT0056,PROM1,reference:对应基因名,,mAOC-CD133,抗体信息对照表260611-FY.xlsx,
+FADT0057,CD4,reference:对应基因名,,mAOC-CD4,抗体信息对照表260611-FY.xlsx,
+FADT0058,HLA-DRA,reference:对应基因名,,mAOC-HLA-DRA,抗体信息对照表260611-FY.xlsx,
+FADT0059,CD8A,reference:对应基因名,,mAOC-CD8a,抗体信息对照表260611-FY.xlsx,
+FADT0060,CD3E,reference:对应基因名,,mAOC-CD3,抗体信息对照表260611-FY.xlsx,
+FADT0061,PTPRC,reference:对应基因名,,mAOC-CD45RA,抗体信息对照表260611-FY.xlsx,
+FADT0062,CD80,reference:对应基因名,,mAOC-CD80,抗体信息对照表260611-FY.xlsx,
+FADT0063,CR2,reference:对应基因名,,mAOC-CD21,抗体信息对照表260611-FY.xlsx,
+FADT0064,HMGB1,reference:对应基因名,,mAOC-HMGB1,抗体信息对照表260611-FY.xlsx,
+FADT0065,HMGB1,reference:对应基因名,,mAOC-HMGB1,抗体信息对照表260611-FY.xlsx,
+FADT0066,TRIM33,reference:对应基因名,,mAOC-TRIM33,抗体信息对照表260611-FY.xlsx,
+FADT0067,CD27,reference:对应基因名,,mAOC-CD27,抗体信息对照表260611-FY.xlsx,
+FADT0068,CD28,reference:对应基因名,,mAOC-CD28,抗体信息对照表260611-FY.xlsx,
+FADT0069,NT5E,reference:对应基因名,,mAOC-CD73,抗体信息对照表260611-FY.xlsx,
+FADT0070,CD79B,reference:对应基因名,,mAOC-CD79b,抗体信息对照表260611-FY.xlsx,
+FADT0071,B3GAT1,reference:对应基因名,,mAOC-CD57,抗体信息对照表260611-FY.xlsx,
+FADT0072,KLRB1,reference:对应基因名,,mAOC-CD161,抗体信息对照表260611-FY.xlsx,
+FADT0074,ITGA4,reference:对应基因名,,mAOC-CD49d,抗体信息对照表260611-FY.xlsx,
+FADT0075,ITGA6,reference:对应基因名,,mAOC-CD49f,抗体信息对照表260611-FY.xlsx,
+FADT0076,CD5,reference:对应基因名,,mAOC-CD5,抗体信息对照表260611-FY.xlsx,
+FADT0077,CD38,reference:对应基因名,,mAOC-CD38,抗体信息对照表260611-FY.xlsx,
+FADT0078,LAMP1,reference:对应基因名,,mAOC-CD107a,抗体信息对照表260611-FY.xlsx,
+FADT0079,ITGA2,reference:对应基因名,,mAOC-CD49b,抗体信息对照表260611-FY.xlsx,
+FADT0080,FCGR3A/FCGR3B,reference:对应基因名,,mAOC-CD16,抗体信息对照表260611-FY.xlsx,
+FADT0081,TFRC,reference:对应基因名,,mAOC-CD71,抗体信息对照表260611-FY.xlsx,
+FADT0082,CD7,reference:对应基因名,,mAOC-CD7,抗体信息对照表260611-FY.xlsx,
+FADT0083,ICAM1,reference:对应基因名,,mAOC-CD54,抗体信息对照表260611-FY.xlsx,
+FADT0084,CD44,reference:对应基因名,,mAOC-CD44,抗体信息对照表260611-FY.xlsx,
+FADT0085,IL2RA,reference:对应基因名,,mAOC-CD25,抗体信息对照表260611-FY.xlsx,
+FADT0086,PDCD1,reference:对应基因名,,mAOC-CD279,抗体信息对照表260611-FY.xlsx,
+FADT0087,CD274,reference:对应基因名,,mAOC-CD274,抗体信息对照表260611-FY.xlsx,
+FADT0088,CD2,reference:对应基因名,,mAOC-CD2,抗体信息对照表260611-FY.xlsx,
+FADT0089,CD38,reference:对应基因名,,mAOC-CD38,抗体信息对照表260611-FY.xlsx,
+FADT0090,SELL,reference:对应基因名,,mAOC-CD62L,抗体信息对照表260611-FY.xlsx,
+FADT0091,ITGB1,reference:对应基因名,,mAOC-CD29,抗体信息对照表260611-FY.xlsx,
+FADT0092,KIR2DL1,reference:对应基因名,,mAOC-CD158a,抗体信息对照表260611-FY.xlsx,
+FADT0093,CD33,reference:对应基因名,,mAOC-CD33,抗体信息对照表260611-FY.xlsx,
+FADT0094,NCAM1,reference:对应基因名,,mAOC-CD56,抗体信息对照表260611-FY.xlsx,
+FADT0095,CD82,reference:对应基因名,,mAOC-CD82,抗体信息对照表260611-FY.xlsx,
+FADT0096,CD40,reference:对应基因名,,mAOC-CD40,抗体信息对照表260611-FY.xlsx,
+FADT0097,CD14,reference:对应基因名,,mAOC-CD14,抗体信息对照表260611-FY.xlsx,
+FADT0098,CD244,reference:对应基因名,,mAOC-CD244,抗体信息对照表260611-FY.xlsx,
+FADT0099,CD55,reference:对应基因名,,mAOC-CD55,抗体信息对照表260611-FY.xlsx,
+FADT0100,CD200,reference:对应基因名,,mAOC-CD200,抗体信息对照表260611-FY.xlsx,
+FADT0101,CD48,reference:对应基因名,,mAOC-CD48,抗体信息对照表260611-FY.xlsx,
+FADT0102,CD81,reference:对应基因名,,mAOC-CD81,抗体信息对照表260611-FY.xlsx,
+FADT0103,FCGR2A,reference:对应基因名,,mAOC-CD32,抗体信息对照表260611-FY.xlsx,
+FADT0104,SELPLG,reference:对应基因名,,mAOC-CD162,抗体信息对照表260611-FY.xlsx,
+FADT0105,CD1D,reference:对应基因名,,mAOC-CD1d,抗体信息对照表260611-FY.xlsx,
+FADT0106,TNFRSF18,reference:对应基因名,,mAOC-CD357,抗体信息对照表260611-FY.xlsx,
+FADT0107,EPCAM,reference:对应基因名,,mAOC-CD326,抗体信息对照表260611-FY.xlsx,
+FADT0108,TGFBI,reference:对应基因名,,mAOC-TGFBI,抗体信息对照表260611-FY.xlsx,
+FADT0109,CD68,reference:对应基因名,,mAOC-CD68,抗体信息对照表260611-FY.xlsx,
+FADT0110,CEACAM8,reference:对应基因名,,mAOC-CD66b,抗体信息对照表260611-FY.xlsx,
+FADT0111,ICAM2,reference:对应基因名,,mAOC-CD102,抗体信息对照表260611-FY.xlsx,
+FADT0113,MCAM,reference:对应基因名,,mAOC-CD146,抗体信息对照表260611-FY.xlsx,
+FADT0114,KIR2DL3,reference:对应基因名,,mAOC-CD158b2,抗体信息对照表260611-FY.xlsx,
+FADT0115,CD99,reference:对应基因名,,mAOC-CD99,抗体信息对照表260611-FY.xlsx,
+FADT0116,LILRB1,reference:对应基因名,,mAOC-CD85j,抗体信息对照表260611-FY.xlsx,
+FADT0117,IFNGR1,reference:对应基因名,,mAOC-CD119,抗体信息对照表260611-FY.xlsx,
+FADT0118,LAIR1,reference:对应基因名,,mAOC-CD305,抗体信息对照表260611-FY.xlsx,
+FADT0119,TF,reference:对应基因名,,mAOC-CD142,抗体信息对照表260611-FY.xlsx,
+FADT0120,CD79B,reference:对应基因名,,mAOC-CD79b,抗体信息对照表260611-FY.xlsx,
+FADT0121,NRP1,reference:对应基因名,,mAOC-CD304,抗体信息对照表260611-FY.xlsx,
+FADT0123,SLAMF6,reference:对应基因名,,mAOC-CD352,抗体信息对照表260611-FY.xlsx,
+FADT0124,CD58,reference:对应基因名,,mAOC-CD58,抗体信息对照表260611-FY.xlsx,
+FADT0125,CD93,reference:对应基因名,,mAOC-CD93,抗体信息对照表260611-FY.xlsx,
+FADT0126,CD24,reference:对应基因名,,mAOC-CD24,抗体信息对照表260611-FY.xlsx,
+FADT0127,IL2RB,reference:对应基因名,,mAOC-CD122,抗体信息对照表260611-FY.xlsx,
+FADT0128,PVR,reference:对应基因名,,mAOC-CD155,抗体信息对照表260611-FY.xlsx,
+FADT0129,CSF2RA,reference:对应基因名,,mAOC-CD116,抗体信息对照表260611-FY.xlsx,
+FADT0130,ENG,reference:对应基因名,,mAOC-CD105,抗体信息对照表260611-FY.xlsx,
+FADT0131,KIR2DL2,reference:对应基因名,,mAOC-CD158b1,抗体信息对照表260611-FY.xlsx,
+FADT0132,ICOS,reference:对应基因名,,mAOC-CD278,抗体信息对照表260611-FY.xlsx,
+FADT0133,ITGB2,reference:对应基因名,,mAOC-CD18,抗体信息对照表260611-FY.xlsx,
+FADT0134,FCGR1A,reference:对应基因名,,mAOC-CD64,抗体信息对照表260611-FY.xlsx,
+FADT0135,ITGAL,reference:对应基因名,,mAOC-CD11a,抗体信息对照表260611-FY.xlsx,
+FADT0136,BTLA,reference:对应基因名,,mAOC-CD272,抗体信息对照表260611-FY.xlsx,
+FADT0137,CD37,reference:对应基因名,,mAOC-CD37,抗体信息对照表260611-FY.xlsx,
+FADT0138,DPP4,reference:对应基因名,,mAOC-CD26,抗体信息对照表260611-FY.xlsx,
+FADT0139,CD22,reference:对应基因名,,mAOC-CD22,抗体信息对照表260611-FY.xlsx,
+FADT0140,KLRG1,reference:对应基因名,,mAOC-KLRG1,抗体信息对照表260611-FY.xlsx,
+FADT0141,ENTPD1,reference:对应基因名,,mAOC-CD39,抗体信息对照表260611-FY.xlsx,
+FADT0142,CSF2RB,reference:对应基因名,,mAOC-CD131,抗体信息对照表260611-FY.xlsx,
+FADT0143,IL3RA,reference:对应基因名,,mAOC-CD123,抗体信息对照表260611-FY.xlsx,
+FADT0144,SIRPA,reference:对应基因名,,mAOC-CD172a,抗体信息对照表260611-FY.xlsx,
+FADT0145,C5AR1,reference:对应基因名,,mAOC-CD88,抗体信息对照表260611-FY.xlsx,
+FADT0146,CCR2,reference:对应基因名,,mAOC-CD192,抗体信息对照表260611-FY.xlsx,
+FADT0147,CCR4,reference:对应基因名,,mAOC-CD194,抗体信息对照表260611-FY.xlsx,
+FADT0148,CCR5,reference:对应基因名,,mAOC-CD195,抗体信息对照表260611-FY.xlsx,
+FADT0149,CLEC4C,reference:对应基因名,,mAOC-CD303,抗体信息对照表260611-FY.xlsx,
+FADT0151,ERBB2,reference:对应基因名,,mAOC-CD340,抗体信息对照表260611-FY.xlsx,
+FADT0152,ERBB2,reference:对应基因名,,mAOC-CD340,抗体信息对照表260611-FY.xlsx,
+FADT0154,SEMA4D,reference:对应基因名,,mAOC-CD100,抗体信息对照表260611-FY.xlsx,
+FADT0155,SEMA4D,reference:对应基因名,,mAOC-CD100,抗体信息对照表260611-FY.xlsx,
+FADT0156,CD86,reference:对应基因名,,mAOC-CD86,抗体信息对照表260611-FY.xlsx,
+FADT0157,CD86,reference:对应基因名,,mAOC-CD86,抗体信息对照表260611-FY.xlsx,
+FADT0158,CD27,reference:对应基因名,,mAOC-CD27,抗体信息对照表260611-FY.xlsx,
+FADT0159,CD28,reference:对应基因名,,mAOC-CD28,抗体信息对照表260611-FY.xlsx,
+FADT0160,KLRB1,reference:对应基因名,,mAOC-CD161,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0161,CD38,reference:对应基因名,,mAOC-CD38,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0162,CD40,reference:对应基因名,,mAOC-CD40,抗体信息对照表260611-FY.xlsx,
+FADT0163,CD44,reference:对应基因名,,mAOC-CD44,抗体信息对照表260611-FY.xlsx,
+FADT0164,IL2RA,reference:对应基因名,,mAOC-CD25,抗体信息对照表260611-FY.xlsx,
+FADT0165,CD38,reference:对应基因名,,mAOC-CD38,抗体信息对照表260611-FY.xlsx,
+FADT0166,CD1D,reference:对应基因名,,mAOC-CD1d,抗体信息对照表260611-FY.xlsx,
+FADT0167,CD22,reference:对应基因名,,mAOC-CD22,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0168,KLRG1,reference:对应基因名,,mAOC-KLRG1,抗体信息对照表260611-FY.xlsx,
+FADT0169,CCR4,reference:对应基因名,,mAOC-CD194,抗体信息对照表260611-FY.xlsx,
+FADT0170,Tag-ALFA,reference:对应基因名,,Tag-ALFA,抗体信息对照表260611-FY.xlsx,
+FADT0171,Tag-SPY,reference:对应基因名,,Tag-SPY,抗体信息对照表260611-FY.xlsx,
+FADT0172,Tag-V5,reference:对应基因名,,Tag-V5,抗体信息对照表260611-FY.xlsx,
+FADT0173,Tag-Flag,reference:对应基因名,,Tag-Flag,抗体信息对照表260611-FY.xlsx,
+FADT0174,ERBB2,reference:对应基因名,,mAOC-CD340,抗体信息对照表260611-FY.xlsx,
+FADT0175,ERBB2,reference:对应基因名,,mAOC-CD340,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0176,ERBB2,reference:对应基因名,,mAOC-CD340,抗体信息对照表260611-FY.xlsx,
+FADT0177,SEMA4D,reference:对应基因名,,mAOC-CD100,抗体信息对照表260611-FY.xlsx,
+FADT0178,SEMA4D,reference:对应基因名,,mAOC-CD100,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0179,SEMA4D,reference:对应基因名,,mAOC-CD100,抗体信息对照表260611-FY.xlsx,
+FADT0180,CD86,reference:对应基因名,,mAOC-CD86,抗体信息对照表260611-FY.xlsx,
+FADT0181,CD86,reference:对应基因名,,mAOC-CD86,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0182,BTLA,reference:对应基因名,,mAOC-CD272,抗体信息对照表260611-FY.xlsx,
+FADT0183,CD27,reference:对应基因名,,mAOC-CD27,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0184,CD8A,reference:对应基因名,,mAOC-CD8a,抗体信息对照表260611-FY.xlsx,
+FADT0185,EPOR,reference:对应基因名,,mAOC-EPOR,抗体信息对照表260611-FY.xlsx,
+FADT0186,LAG3,reference:对应基因名,,mAOC-CD223,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0187,PDCD1,reference:对应基因名,,mAOC-CD279,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+FADT0188,CD274,reference:对应基因名,,mAOC-CD274,抗体信息对照表260611-FY.xlsx,
+mAOC0189,ACVR2B,reference:对应基因名,,mAOC-ACVR2B,抗体信息对照表260611-FY.xlsx,
+mAOC0190,ALK,reference:对应基因名,,mAOC-CD246,抗体信息对照表260611-FY.xlsx,
+mAOC0191,BTLA,reference:对应基因名,,mAOC-CD272,抗体信息对照表260611-FY.xlsx,
+mAOC0192,ITGAL,reference:对应基因名,,mAOC-CD11a,抗体信息对照表260611-FY.xlsx,
+mAOC0193,CD163,reference:对应基因名,,mAOC-CD163,抗体信息对照表260611-FY.xlsx,
+mAOC0194,FCGR3A,reference:对应基因名,,mAOC-CD16a,抗体信息对照表260611-FY.xlsx,
+mAOC0197,CD4,reference:对应基因名,,mAOC-CD4,抗体信息对照表260611-FY.xlsx,
+mAOC0199,CD47,reference:对应基因名,,mAOC-CD47,抗体信息对照表260611-FY.xlsx,
+mAOC0200,CD8A,reference:对应基因名,,mAOC-CD8a,抗体信息对照表260611-FY.xlsx,
+mAOC0202,FAS,reference:对应基因名,,mAOC-CD95,抗体信息对照表260611-FY.xlsx,
+mAOC0203,FGFR2,reference:对应基因名,,mAOC-CD332,抗体信息对照表260611-FY.xlsx,
+mAOC0204,FGFR3,reference:对应基因名,,mAOC-CD333,抗体信息对照表260611-FY.xlsx,
+mAOC0205,FZD10,reference:对应基因名,,mAOC-CD350,抗体信息对照表260611-FY.xlsx,
+mAOC0206,GPC2,reference:对应基因名,,mAOC-GPC2,抗体信息对照表260611-FY.xlsx,
+mAOC0208,IL7R,reference:对应基因名,,mAOC-CD127,抗体信息对照表260611-FY.xlsx,
+mAOC0209,INSR,reference:对应基因名,,mAOC-CD220,抗体信息对照表260611-FY.xlsx,
+mAOC0210,LAG3,reference:对应基因名,,mAOC-CD223,抗体信息对照表260611-FY.xlsx,
+mAOC0211,LAMP1,reference:对应基因名,,mAOC-CD107a,抗体信息对照表260611-FY.xlsx,
+mAOC0212,LGALS3,reference:对应基因名,,mAOC-LGALS3,抗体信息对照表260611-FY.xlsx,
+mAOC0213,MICA,reference:对应基因名,,mAOC-MICA,抗体信息对照表260611-FY.xlsx,
+mAOC0214,NOTCH3,reference:对应基因名,,mAOC-NOTCH3,抗体信息对照表260611-FY.xlsx,
+mAOC0215,NT5E,reference:对应基因名,,mAOC-CD73,抗体信息对照表260611-FY.xlsx,
+mAOC0217,SHH,reference:对应基因名,,mAOC-SHH,抗体信息对照表260611-FY.xlsx,
+mAOC0218,SIGLEC15,reference:对应基因名,,mAOC-SIGLEC15,抗体信息对照表260611-FY.xlsx,
+mAOC0219,TIGIT,reference:对应基因名,,mAOC-TIGIT,抗体信息对照表260611-FY.xlsx,
+mAOC0220,TNFRSF9,reference:对应基因名,,mAOC-CD309,抗体信息对照表260611-FY.xlsx,
+mAOC0221,CXCR5,reference:对应基因名,,mAOC-CD185,抗体信息对照表260611-FY.xlsx,
+mAOC0222,PTPRC,reference:对应基因名,,mAOC-CD45RO,抗体信息对照表260611-FY.xlsx,
+mAOC0228,ABCG2,reference:对应基因名,,mAOC-CD338,抗体信息对照表260611-FY.xlsx,
+mAOC0229,ACE2,reference:对应基因名,,mAOC-ACE2,抗体信息对照表260611-FY.xlsx,
+mAOC0230,CD163,reference:对应基因名,,mAOC-CD163,抗体信息对照表260611-FY.xlsx,
+mAOC0231,CD22,reference:对应基因名,,mAOC-CD22,抗体信息对照表260611-FY.xlsx,
+mAOC0233,FCGR2B,reference:对应基因名,,mAOC-CD32b,抗体信息对照表260611-FY.xlsx,
+mAOC0234,CD40,reference:对应基因名,,mAOC-CD40,抗体信息对照表260611-FY.xlsx,
+mAOC0235,CD40LG,reference:对应基因名,,mAOC-CD154,抗体信息对照表260611-FY.xlsx,
+mAOC0236,CD70,reference:对应基因名,,mAOC-CD70,抗体信息对照表260611-FY.xlsx,
+mAOC0237,CSF1R,reference:对应基因名,,mAOC-CD115,抗体信息对照表260611-FY.xlsx,
+mAOC0238,EPOR,reference:对应基因名,,mAOC-EPOR,抗体信息对照表260611-FY.xlsx,
+mAOC0240,ERBB3,reference:对应基因名,,mAOC-HER3,抗体信息对照表260611-FY.xlsx,
+mAOC0241,FCGR2B,reference:对应基因名,,mAOC-CD32b,抗体信息对照表260611-FY.xlsx,
+mAOC0242,HPN,reference:对应基因名,,mAOC-Hepsin,抗体信息对照表260611-FY.xlsx,
+mAOC0243,ICOSLG,reference:对应基因名,,mAOC-CD275,抗体信息对照表260611-FY.xlsx,
+mAOC0244,IGKC,reference:对应基因名,,mAOC-IGKC,抗体信息对照表260611-FY.xlsx,
+mAOC0245,IGKC,reference:对应基因名,,mAOC-IGKC,抗体信息对照表260611-FY.xlsx,
+mAOC0246,IL4R,reference:对应基因名,,mAOC-CD124,抗体信息对照表260611-FY.xlsx,
+mAOC0247,ITGB1,reference:对应基因名,,mAOC-CD29,抗体信息对照表260611-FY.xlsx,
+mAOC0249,LILRB2,reference:对应基因名,,mAOC-CD85d,抗体信息对照表260611-FY.xlsx,
+mAOC0250,LRRC32,reference:对应基因名,,mAOC-GARP,抗体信息对照表260611-FY.xlsx,
+mAOC0251,MICA,reference:对应基因名,,mAOC-MICA,抗体信息对照表260611-FY.xlsx,
+mAOC0252,NCR1,reference:对应基因名,,mAOC-CD335,抗体信息对照表260611-FY.xlsx,
+mAOC0253,NOTCH1,reference:对应基因名,,mAOC-NOTCH1,抗体信息对照表260611-FY.xlsx,
+mAOC0254,NOTCH3,reference:对应基因名,,mAOC-NOTCH3,抗体信息对照表260611-FY.xlsx,
+mAOC0256,PDCD1,reference:对应基因名,,mAOC-CD279,抗体信息对照表260611-FY.xlsx,
+mAOC0257,PDCD1,reference:对应基因名,,mAOC-CD279,抗体信息对照表260611-FY.xlsx,
+mAOC0258,CD274,reference:对应基因名,,mAOC-CD274,抗体信息对照表260611-FY.xlsx,
+mAOC0259,SIRPA,reference:对应基因名,,mAOC-CD172a,抗体信息对照表260611-FY.xlsx,
+mAOC0260,TEK,reference:对应基因名,,mAOC-CD202b,抗体信息对照表260611-FY.xlsx,
+mAOC0262,TNF,reference:对应基因名,,mAOC-TNFA,抗体信息对照表260611-FY.xlsx,
+mAOC0263,TNFRSF10B,reference:对应基因名,,mAOC-CD262,抗体信息对照表260611-FY.xlsx,
+mAOC0264,TNFSF13B,reference:对应基因名,,mAOC-CD257,抗体信息对照表260611-FY.xlsx,
+mAOC0265,TRBC1,reference:对应基因名,,mAOC-TRBC,抗体信息对照表260611-FY.xlsx,
+mAOC0266,TSHR,reference:对应基因名,,mAOC-TSHR,抗体信息对照表260611-FY.xlsx,
+mAOC0267,VSIR,reference:对应基因名,,mAOC-VISTA,抗体信息对照表260611-FY.xlsx,
+mAOC0268,CCR7,reference:对应基因名,,mAOC-CD197,抗体信息对照表260611-FY.xlsx,
+mAOC0269,KLRK1,reference:对应基因名,,mAOC-CD314,抗体信息对照表260611-FY.xlsx,
+mAOC0288,ACE2,reference:对应基因名,,mAOC-ACE2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0289,Tag-ALFA,reference:对应基因名,,Tag-ALFA,抗体信息对照表260611-FY.xlsx,
+mAOC0290,Tag-SPY,reference:对应基因名,,Tag-SPY,抗体信息对照表260611-FY.xlsx,
+mAOC0291,Tag-V5,reference:对应基因名,,Tag-V5,抗体信息对照表260611-FY.xlsx,
+mAOC0292,Tag-Flag,reference:对应基因名,,Tag-Flag,抗体信息对照表260611-FY.xlsx,
+mAOC0293,ERBB2,reference:对应基因名,,mAOC-CD340,抗体信息对照表260611-FY.xlsx,
+mAOC0294,ERBB2,reference:对应基因名,,mAOC-CD340,抗体信息对照表260611-FY.xlsx,
+mAOC0295,ERBB2,reference:对应基因名,,mAOC-CD340,抗体信息对照表260611-FY.xlsx,
+mAOC0296,SEMA4D,reference:对应基因名,,mAOC-CD100,抗体信息对照表260611-FY.xlsx,
+mAOC0297,SEMA4D,reference:对应基因名,,mAOC-CD100,抗体信息对照表260611-FY.xlsx,
+mAOC0298,SEMA4D,reference:对应基因名,,mAOC-CD100,抗体信息对照表260611-FY.xlsx,
+mAOC0299,CD86,reference:对应基因名,,mAOC-CD86,抗体信息对照表260611-FY.xlsx,
+mAOC0301,FCGR3A/FCGR3B,reference:对应基因名,,mAOC-CD16,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0302,ITGAX,reference:对应基因名,,mAOC-CD11c,抗体信息对照表260611-FY.xlsx,
+mAOC0303,NCAM1,reference:对应基因名,,mAOC-CD56,抗体信息对照表260611-FY.xlsx,
+mAOC0305,CD8A,reference:对应基因名,,mAOC-CD8a,抗体信息对照表260611-FY.xlsx,
+mAOC0306,PTPRC,reference:对应基因名,,mAOC-CD45RA,抗体信息对照表260611-FY.xlsx,
+mAOC0307,CD7,reference:对应基因名,,mAOC-CD7,抗体信息对照表260611-FY.xlsx,
+mAOC0313,CD8A,reference:对应基因名,,mAOC-CD8a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0314,CD27,reference:对应基因名,,mAOC-CD27,抗体信息对照表260611-FY.xlsx,
+mAOC0315,CD3E,reference:对应基因名,,mAOC-CD3,抗体信息对照表260611-FY.xlsx,
+mAOC0316,CD28,reference:对应基因名,,mAOC-CD28,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0317,PTPRC,reference:对应基因名,,mAOC-CD45RA,抗体信息对照表260611-FY.xlsx,
+mAOC0318,NT5E,reference:对应基因名,,mAOC-CD73,抗体信息对照表260611-FY.xlsx,
+mAOC0319,CD79B,reference:对应基因名,,mAOC-CD79b,抗体信息对照表260611-FY.xlsx,
+mAOC0320,CD80,reference:对应基因名,,mAOC-CD80,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0321,B3GAT1,reference:对应基因名,,mAOC-CD57,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0322,KLRB1,reference:对应基因名,,mAOC-CD161,抗体信息对照表260611-FY.xlsx,
+mAOC0323,KLRK1,reference:对应基因名,,mAOC-CD314,抗体信息对照表260611-FY.xlsx,
+mAOC0324,ITGA4,reference:对应基因名,,mAOC-CD49d,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0326,CD5,reference:对应基因名,,mAOC-CD5,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0327,CR2,reference:对应基因名,,mAOC-CD21,抗体信息对照表260611-FY.xlsx,
+mAOC0328,CD38,reference:对应基因名,,mAOC-CD38,抗体信息对照表260611-FY.xlsx,
+mAOC0329,LAMP1,reference:对应基因名,,mAOC-CD107a,抗体信息对照表260611-FY.xlsx,
+mAOC0330,ITGA2,reference:对应基因名,,mAOC-CD49b,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0331,CD226,reference:对应基因名,,mAOC-CD226,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0332,PECAM1,reference:对应基因名,,mAOC-CD31,抗体信息对照表260611-FY.xlsx,
+mAOC0333,CD72,reference:对应基因名,,mAOC-CD72,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0334,CD96,reference:对应基因名,,mAOC-CD96,抗体信息对照表260611-FY.xlsx,
+mAOC0335,CD160,reference:对应基因名,,mAOC-CD160,抗体信息对照表260611-FY.xlsx,
+mAOC0336,CD34,reference:对应基因名,,mAOC-CD34,抗体信息对照表260611-FY.xlsx,
+mAOC0337,CD19,reference:对应基因名,,mAOC-CD19,抗体信息对照表260611-FY.xlsx,
+mAOC0338,NCAM1,reference:对应基因名,,mAOC-CD56,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0339,PROM1,reference:对应基因名,,mAOC-CD133,抗体信息对照表260611-FY.xlsx,
+mAOC0340,CD4,reference:对应基因名,,mAOC-CD4,抗体信息对照表260611-FY.xlsx,
+mAOC0341,HLA-DRA,reference:对应基因名,,mAOC-HLA-DRA,抗体信息对照表260611-FY.xlsx,
+mAOC0342,CD226,reference:对应基因名,,mAOC-CD226,抗体信息对照表260611-FY.xlsx,
+mAOC0343,PECAM1,reference:对应基因名,,mAOC-CD31,抗体信息对照表260611-FY.xlsx,
+mAOC0344,CD160,reference:对应基因名,,mAOC-CD160,抗体信息对照表260611-FY.xlsx,
+mAOC0345,KLRK1,reference:对应基因名,,mAOC-CD314,抗体信息对照表260611-FY.xlsx,
+mAOC0346,CD96,reference:对应基因名,,mAOC-CD96,抗体信息对照表260611-FY.xlsx,
+mAOC0347,CD34,reference:对应基因名,,mAOC-CD34,抗体信息对照表260611-FY.xlsx,
+mAOC0348,CD47,reference:对应基因名,,mAOC-CD47,抗体信息对照表260611-FY.xlsx,
+mAOC0349,TIGIT,reference:对应基因名,,mAOC-TIGIT,抗体信息对照表260611-FY.xlsx,
+mAOC0352,FZD5,reference:对应基因名,,mAOC-FZD5,抗体信息对照表260611-FY.xlsx,
+mAOC0353,GLP1R,reference:对应基因名,,mAOC-GLP1R,抗体信息对照表260611-FY.xlsx,
+mAOC0354,GLP1R,reference:对应基因名,,mAOC-GLP1R,抗体信息对照表260611-FY.xlsx,
+mAOC0355,HTR2B,reference:对应基因名,,mAOC-HTR2B,抗体信息对照表260611-FY.xlsx,
+mAOC0356,IL13RA2,reference:对应基因名,,mAOC-CD213a2,抗体信息对照表260611-FY.xlsx,
+mAOC0357,JAG1,reference:对应基因名,,mAOC-CD339,抗体信息对照表260611-FY.xlsx,
+mAOC0358,TFRC,reference:对应基因名,,mAOC-CD71,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0359,ICAM1,reference:对应基因名,,mAOC-CD54,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0360,PDCD1,reference:对应基因名,,mAOC-CD279,抗体信息对照表260611-FY.xlsx,
+mAOC0361,CD274,reference:对应基因名,,mAOC-CD274,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0362,CD2,reference:对应基因名,,mAOC-CD2,抗体信息对照表260611-FY.xlsx,
+mAOC0363,CD47,reference:对应基因名,,mAOC-CD47,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0364,SELL,reference:对应基因名,,mAOC-CD62L,抗体信息对照表260611-FY.xlsx,
+mAOC0365,ITGB1,reference:对应基因名,,mAOC-CD29,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0366,CD244,reference:对应基因名,,mAOC-CD244,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0367,KIR2DL1,reference:对应基因名,,mAOC-CD158a,抗体信息对照表260611-FY.xlsx,
+mAOC0368,CD33,reference:对应基因名,,mAOC-CD33,抗体信息对照表260611-FY.xlsx,
+mAOC0370,CD82,reference:对应基因名,,mAOC-CD82,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0371,CD200,reference:对应基因名,,mAOC-CD200,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0372,CD48,reference:对应基因名,,mAOC-CD48,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0373,CD81,reference:对应基因名,,mAOC-CD81,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0374,FCGR2A,reference:对应基因名,,mAOC-CD32,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0375,SELPLG,reference:对应基因名,,mAOC-CD162,抗体信息对照表260611-FY.xlsx,
+mAOC0376,TNFRSF18,reference:对应基因名,,mAOC-CD357,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0377,EPCAM,reference:对应基因名,,mAOC-CD326,抗体信息对照表260611-FY.xlsx,
+mAOC0378,TGFBI,reference:对应基因名,,mAOC-TGFBI,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0379,CD68,reference:对应基因名,,mAOC-CD68,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0380,CEACAM8,reference:对应基因名,,mAOC-CD66b,抗体信息对照表260611-FY.xlsx,
+mAOC0381,ICAM2,reference:对应基因名,,mAOC-CD102,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0382,TIGIT,reference:对应基因名,,mAOC-TIGIT,抗体信息对照表260611-FY.xlsx,
+mAOC0383,MCAM,reference:对应基因名,,mAOC-CD146,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0384,KIR2DL3,reference:对应基因名,,mAOC-CD158b2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0385,CD99,reference:对应基因名,,mAOC-CD99,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0386,LILRB1,reference:对应基因名,,mAOC-CD85j,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0387,IFNGR1,reference:对应基因名,,mAOC-CD119,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0388,LAIR1,reference:对应基因名,,mAOC-CD305,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0389,TF,reference:对应基因名,,mAOC-CD142,抗体信息对照表260611-FY.xlsx,
+mAOC0390,CD79B,reference:对应基因名,,mAOC-CD79b,抗体信息对照表260611-FY.xlsx,
+mAOC0391,NRP1,reference:对应基因名,,mAOC-CD304,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0392,SLAMF6,reference:对应基因名,,mAOC-CD352,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0398,mK,reference:对应基因名,,mAOC-mIgK,抗体信息对照表260611-FY.xlsx,
+mAOC0399,mK,reference:对应基因名,,mAOC-mIgK,抗体信息对照表260611-FY.xlsx,
+mAOC0400,mK,reference:对应基因名,,mAOC-mIgK,抗体信息对照表260611-FY.xlsx,
+mAOC0401,mK,reference:对应基因名,,mAOC-mIgK,抗体信息对照表260611-FY.xlsx,
+mAOC0402,mK,reference:对应基因名,,mAOC-mIgK,抗体信息对照表260611-FY.xlsx,
+mAOC0403,mL,reference:对应基因名,,mAOC-mIgL,抗体信息对照表260611-FY.xlsx,
+mAOC0404,mL,reference:对应基因名,,mAOC-mIgL,抗体信息对照表260611-FY.xlsx,
+mAOC0405,mL,reference:对应基因名,,mAOC-mIgL,抗体信息对照表260611-FY.xlsx,
+mAOC0406,mL,reference:对应基因名,,mAOC-mIgL,抗体信息对照表260611-FY.xlsx,
+mAOC0407,mL,reference:对应基因名,,mAOC-mIgL,抗体信息对照表260611-FY.xlsx,
+mAOC0408,CD58,reference:对应基因名,,mAOC-CD58,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0409,CD93,reference:对应基因名,,mAOC-CD93,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0410,CD24,reference:对应基因名,,mAOC-CD24,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0411,IL2RB,reference:对应基因名,,mAOC-CD122,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0412,PVR,reference:对应基因名,,mAOC-CD155,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0413,CSF2RA,reference:对应基因名,,mAOC-CD116,抗体信息对照表260611-FY.xlsx,
+mAOC0414,ENG,reference:对应基因名,,mAOC-CD105,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0415,KIR2DL2,reference:对应基因名,,mAOC-CD158b1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0416,ICOS,reference:对应基因名,,mAOC-CD278,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0417,ITGB2,reference:对应基因名,,mAOC-CD18,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0418,FCGR1A,reference:对应基因名,,mAOC-CD64,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0419,ITGAL,reference:对应基因名,,mAOC-CD11a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0420,BTLA,reference:对应基因名,,mAOC-CD272,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0421,CD37,reference:对应基因名,,mAOC-CD37,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0422,DPP4,reference:对应基因名,,mAOC-CD26,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0423,ENTPD1,reference:对应基因名,,mAOC-CD39,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0424,CSF2RB,reference:对应基因名,,mAOC-CD131,抗体信息对照表260611-FY.xlsx,
+mAOC0425,IL3RA,reference:对应基因名,,mAOC-CD123,抗体信息对照表260611-FY.xlsx,
+mAOC0426,SIRPA,reference:对应基因名,,mAOC-CD172a,抗体信息对照表260611-FY.xlsx,
+mAOC0427,KLB,reference:对应基因名,,mAOC-KLB,抗体信息对照表260611-FY.xlsx,
+mAOC0428,LINGO1,reference:对应基因名,,mAOC-LINGO1,抗体信息对照表260611-FY.xlsx,
+mAOC0429,SLC40A1,reference:对应基因名,,mAOC-SLC40A1,抗体信息对照表260611-FY.xlsx,
+mAOC0430,TNFRSF1B,reference:对应基因名,,mAOC-CD120b,抗体信息对照表260611-FY.xlsx,
+mAOC0431,TNFSF12,reference:对应基因名,,mAOC-TNFSF12,抗体信息对照表260611-FY.xlsx,
+mAOC0432,CR1,reference:对应基因名,,mAOC-CD35,抗体信息对照表260611-FY.xlsx,
+mAOC0433,B2M,reference:对应基因名,,B2M-433,抗体信息对照表260611-FY.xlsx,
+mAOC0434,B2M,reference:对应基因名,,B2M-434,抗体信息对照表260611-FY.xlsx,
+mAOC0435,B2M,reference:对应基因名,,B2M-435,抗体信息对照表260611-FY.xlsx,
+mAOC0436,B2M,reference:对应基因名,,B2M-436,抗体信息对照表260611-FY.xlsx,
+mAOC0437,B2M,reference:对应基因名,,B2M-437,抗体信息对照表260611-FY.xlsx,
+mAOC0438,CD80,reference:对应基因名,,mAOC-CD80,抗体信息对照表260611-FY.xlsx,
+mAOC0439,ICOSLG,reference:对应基因名,,mAOC-CD275,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0440,CD70,reference:对应基因名,,mAOC-CD70,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0442,ENG,reference:对应基因名,,mAOC-CD105,抗体信息对照表260611-FY.xlsx,
+mAOC0444,IL4R,reference:对应基因名,,mAOC-CD124,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0445,KIR2DL2,reference:对应基因名,,mAOC-CD158b1,抗体信息对照表260611-FY.xlsx,
+mAOC0446,KIR2DL5A,reference:对应基因名,,mAOC-CD158f1,抗体信息对照表260611-FY.xlsx,
+mAOC0447,LILRB2,reference:对应基因名,,mAOC-CD85k,抗体信息对照表260611-FY.xlsx,
+mAOC0448,PVR,reference:对应基因名,,mAOC-CD155,抗体信息对照表260611-FY.xlsx,
+mAOC0449,CD47,reference:对应基因名,,mAOC-CD47,抗体信息对照表260611-FY.xlsx,
+mAOC0450,CD40,reference:对应基因名,,mAOC-CD40,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0451,CD40,reference:对应基因名,,mAOC-CD40,抗体信息对照表260611-FY.xlsx,
+mAOC0452,CD40LG,reference:对应基因名,,mAOC-CD154-1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0453,HLA-A/HLA-B/HLA-C,reference:对应基因名,,mAOC-HLA-ABC,抗体信息对照表260611-FY.xlsx,
+mAOC0454,IL3RA,reference:对应基因名,,mAOC-CD123,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0455,ITGA6,reference:对应基因名,,mAOC-CD49f,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0459,CXCR3,reference:对应基因名,,mAOC-CD183,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0460,CCR5,reference:对应基因名,,mAOC-CD195,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0461,CXCR5,reference:对应基因名,,mAOC-CD185,抗体信息对照表260611-FY.xlsx,
+mAOC0462,FAS,reference:对应基因名,,mAOC-CD95,抗体信息对照表260611-FY.xlsx,
+mAOC0464,THBD,reference:对应基因名,,mAOC-CD141,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0465,CD58,reference:对应基因名,,mAOC-CD58,抗体信息对照表260611-FY.xlsx,
+mAOC0466,ENTPD1,reference:对应基因名,,mAOC-CD39,抗体信息对照表260611-FY.xlsx,
+mAOC0467,CD24,reference:对应基因名,,mAOC-CD24,抗体信息对照表260611-FY.xlsx,
+mAOC0469,ITGAL,reference:对应基因名,,mAOC-CD11a,抗体信息对照表260611-FY.xlsx,
+mAOC0470,CCR2,reference:对应基因名,,mAOC-CD192,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0471,IL2RB,reference:对应基因名,,mAOC-CD122,抗体信息对照表260611-FY.xlsx,
+mAOC0472,CD163,reference:对应基因名,,mAOC-CD163,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0473,CD163,reference:对应基因名,,mAOC-CD163,抗体信息对照表260611-FY.xlsx,
+mAOC0474,CLEC4C,reference:对应基因名,,mAOC-CD303,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0475,ITGB2,reference:对应基因名,,mAOC-CD18,抗体信息对照表260611-FY.xlsx,
+mAOC0476,IL7R,reference:对应基因名,,mAOC-CD127,抗体信息对照表260611-FY.xlsx,
+mAOC0477,DPP4,reference:对应基因名,,mAOC-CD26,抗体信息对照表260611-FY.xlsx,
+mAOC0478,CD93,reference:对应基因名,,mAOC-CD93,抗体信息对照表260611-FY.xlsx,
+mAOC0479,FCER2,reference:对应基因名,,mAOC-CD23,抗体信息对照表260611-FY.xlsx,
+mAOC0480,FCGR3A/FCGR3B,reference:对应基因名,,mAOC-CD16,抗体信息对照表260611-FY.xlsx,
+mAOC0481,TFRC,reference:对应基因名,,mAOC-CD71,抗体信息对照表260611-FY.xlsx,
+mAOC0482,CD7,reference:对应基因名,,mAOC-CD7,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0485,IL2RA,reference:对应基因名,,mAOC-CD25,抗体信息对照表260611-FY.xlsx,
+mAOC0486,CD2,reference:对应基因名,,mAOC-CD2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0487,CD38,reference:对应基因名,,mAOC-CD38,抗体信息对照表260611-FY.xlsx,
+mAOC0488,SELL,reference:对应基因名,,mAOC-CD62L,抗体信息对照表260611-FY.xlsx,
+mAOC0489,CD244,reference:对应基因名,,mAOC-CD244,抗体信息对照表260611-FY.xlsx,
+mAOC0490,KIR2DL1,reference:对应基因名,,mAOC-CD158a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0491,ENG,reference:对应基因名,,mAOC-CD105,抗体信息对照表260611-FY.xlsx,
+mAOC0492,CSF1R,reference:对应基因名,,mAOC-CD115,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0493,TIGIT,reference:对应基因名,,mAOC-TIGIT,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0494,CD22,reference:对应基因名,,mAOC-CD22,抗体信息对照表260611-FY.xlsx,
+mAOC0495,ITGAL,reference:对应基因名,,mAOC-CD11a,抗体信息对照表260611-FY.xlsx,
+mAOC0496,BTLA,reference:对应基因名,,mAOC-CD272,抗体信息对照表260611-FY.xlsx,
+mAOC0497,CD37,reference:对应基因名,,mAOC-CD37,抗体信息对照表260611-FY.xlsx,
+mAOC0498,CSF2RB,reference:对应基因名,,mAOC-CD131,抗体信息对照表260611-FY.xlsx,
+mAOC0499,C5AR1,reference:对应基因名,,mAOC-CD88,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0500,FCGR3A,reference:对应基因名,,mAOC-CD16a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0501,FGFR3,reference:对应基因名,,mAOC-CD333,抗体信息对照表260611-FY.xlsx,
+mAOC0502,NT5E,reference:对应基因名,,mAOC-CD73,抗体信息对照表260611-FY.xlsx,
+mAOC0505,CR1,reference:对应基因名,,mAOC-CD35,抗体信息对照表260611-FY.xlsx,
+mAOC0506,PECAM1,reference:对应基因名,,mAOC-CD31,抗体信息对照表260611-FY.xlsx,
+mAOC0507,ITGAX,reference:对应基因名,,mAOC-CD11c,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0508,BST1,reference:对应基因名,,mAOC-CD157,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0509,BTN3A1,reference:对应基因名,,mAOC-CD277,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0510,CD164,reference:对应基因名,,mAOC-CD164,抗体信息对照表260611-FY.xlsx,
+mAOC0511,IDE,reference:对应基因名,,mAOC-IDE,抗体信息对照表260611-FY.xlsx,
+mAOC0512,PTPRC,reference:对应基因名,,mAOC-CD45RA,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0513,KLRD1,reference:对应基因名,,mAOC-CD94,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0514,CD101,reference:对应基因名,,mAOC-CD101,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0515,SIGLEC7,reference:对应基因名,,mAOC-CD328-2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0516,SLAMF1,reference:对应基因名,,mAOC-CD150,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0517,XRCC6,reference:对应基因名,,mAOC-Ku70,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0518,ACVR2B,reference:对应基因名,,mAOC-ACVR2B,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0519,ALK,reference:对应基因名,,mAOC-CD246,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0520,TNF,reference:对应基因名,,mAOC-TNFA,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0522,FZD10,reference:对应基因名,,mAOC-CD350,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0523,GLP1R,reference:对应基因名,,mAOC-GLP1R,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0524,GPC2,reference:对应基因名,,mAOC-GPC2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0525,HTR2B,reference:对应基因名,,mAOC-HTR2B,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0526,IL13RA2,reference:对应基因名,,mAOC-CD213a2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0527,INSR,reference:对应基因名,,mAOC-CD220,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0528,LGALS3,reference:对应基因名,,mAOC-LGALS3,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0529,TNFSF13B,reference:对应基因名,,mAOC-CD257,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0530,PDCD1,reference:对应基因名,,mAOC-CD279,抗体信息对照表260611-FY.xlsx,
+mAOC0531,TNFSF12,reference:对应基因名,,mAOC-TNFSF12,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0532,KLRK1,reference:对应基因名,,mAOC-CD314,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0533,CD274,reference:对应基因名,,mAOC-CD274,抗体信息对照表260611-FY.xlsx,
+mAOC0534,FCGR1A,reference:对应基因名,,mAOC-CD64,抗体信息对照表260611-FY.xlsx,
+mAOC0535,CCR2,reference:对应基因名,,mAOC-CD192,抗体信息对照表260611-FY.xlsx,
+mAOC0536,CD4,reference:对应基因名,,mAOC-CD4,抗体信息对照表260611-FY.xlsx,
+mAOC0537,IGKC,reference:对应基因名,,mAOC-IGKC,抗体信息对照表260611-FY.xlsx,
+mAOC0538,ITGB1,reference:对应基因名,,mAOC-CD29,抗体信息对照表260611-FY.xlsx,
+mAOC0540,KIT,reference:对应基因名,,mAOC-CD117,抗体信息对照表260611-FY.xlsx,
+mAOC0541,KLB,reference:对应基因名,,mAOC-KLB,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0542,LAMP1,reference:对应基因名,,mAOC-CD107a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0543,LRRC32,reference:对应基因名,,mAOC-GARP,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0544,MICA,reference:对应基因名,,mAOC-MICA,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0545,NCR1,reference:对应基因名,,mAOC-CD335,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0546,NOTCH1,reference:对应基因名,,mAOC-NOTCH1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0547,SIRPA,reference:对应基因名,,mAOC-CD172a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0548,SLC40A1,reference:对应基因名,,mAOC-SLC40A1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0549,HAVCR2,reference:对应基因名,,mAOC-CD366,抗体信息对照表260611-FY.xlsx,
+mAOC0550,TNFRSF10B,reference:对应基因名,,mAOC-CD262,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0551,TNFRSF17,reference:对应基因名,,mAOC-CD269,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0553,TSHR,reference:对应基因名,,mAOC-TSHR,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0554,TNFRSF9,reference:对应基因名,,mAOC-CD309,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0555,VSIR,reference:对应基因名,,mAOC-VISTA,抗体信息对照表260611-FY.xlsx,
+mAOC0556,CCR7,reference:对应基因名,,mAOC-CD197,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0558,HMGB1,reference:对应基因名,,mAOC-HMGB1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0559,TRIM33,reference:对应基因名,,mAOC-TRIM33,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0561,FCGR2B,reference:对应基因名,,mAOC-CD32b,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0562,FGFR2,reference:对应基因名,,mAOC-CD332,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0564,ABCG2,reference:对应基因名,,mAOC-CD338,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0565,ABCB4,reference:对应基因名,,mAOC-ABCB4,抗体信息对照表260611-FY.xlsx,
+mAOC0566,ABCB4,reference:对应基因名,,mAOC-ABCB4,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0567,MS4A1,reference:对应基因名,,mAOC-CD20,抗体信息对照表260611-FY.xlsx,
+mAOC0569,FZD5,reference:对应基因名,,mAOC-FZD5,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0570,GLP1R,reference:对应基因名,,mAOC-GLP1R,抗体信息对照表260611-FY.xlsx,
+mAOC0572,IGKC,reference:对应基因名,,mAOC-IGKC,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0576,SIGLEC15,reference:对应基因名,,mAOC-SIGLEC15,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0580,TEK,reference:对应基因名,,mAOC-CD202b,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0581,CD40LG,reference:对应基因名,,mAOC-CD154-2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0582,CD46,reference:对应基因名,,mAOC-CD46,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0583,CD74,reference:对应基因名,,mAOC-CD74,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0584,CSF2RA,reference:对应基因名,,mAOC-CD116,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0585,FCER1A,reference:对应基因名,,mAOC-FCER1A,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0586,ICAM3,reference:对应基因名,,mAOC-CD50,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0587,IL10RB,reference:对应基因名,,mAOC-CD210b,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0588,IL18R1,reference:对应基因名,,mAOC-CD218a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0589,IL1RAP,reference:对应基因名,,mAOC-IL1RAP,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0590,IL21R,reference:对应基因名,,mAOC-CD360,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0591,LILRA5,reference:对应基因名,,mAOC-CD85f,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0592,LILRB3,reference:对应基因名,,mAOC-CD85a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0593,CD6,reference:对应基因名,,mAOC-CD6,抗体信息对照表260611-FY.xlsx,
+mAOC0597,FAS,reference:对应基因名,,mAOC-CD95,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0598,FCAR,reference:对应基因名,,mAOC-CD89,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0599,FCER2,reference:对应基因名,,mAOC-CD23,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0600,IGSF8,reference:对应基因名,,mAOC-CD316,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0601,IL6R,reference:对应基因名,,mAOC-CD126,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0602,IL2RG,reference:对应基因名,,mAOC-CD132,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0603,IL6ST,reference:对应基因名,,mAOC-CD130,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0604,IL7R,reference:对应基因名,,mAOC-CD127,抗体信息对照表260611-FY.xlsx,
+mAOC0605,KIR3DL2,reference:对应基因名,,mAOC-CD158k,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0606,SLC3A2,reference:对应基因名,,mAOC-CD98,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0607,TGFBR2,reference:对应基因名,,mAOC-TGFBR2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0608,CDH8,reference:对应基因名,,mAOC-CDH8,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0610,FGFR4,reference:对应基因名,,mAOC-CD334,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0611,ALCAM,reference:对应基因名,,mAOC-CD166,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0613,CEACAM1,reference:对应基因名,,mAOC-CD66a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0614,F2,reference:对应基因名,,mAOC-F2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0615,SIGIRR,reference:对应基因名,,mAOC-SIGIRR,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0616,CTSS,reference:对应基因名,,mAOC-CTSS,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0617,CSF3,reference:对应基因名,,mAOC-CSF3,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0618,SORT1,reference:对应基因名,,mAOC-SORT1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0619,ROR2,reference:对应基因名,,mAOC-ROR2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0620,FCGR3A/FCGR3B,reference:对应基因名,,mAOC-CD16,抗体信息对照表260611-FY.xlsx,
+mAOC0621,FCGR3A/FCGR3B,reference:对应基因名,,mAOC-CD16,抗体信息对照表260611-FY.xlsx,
+mAOC0622,SELL,reference:对应基因名,,mAOC-CD62L,抗体信息对照表260611-FY.xlsx,
+mAOC0623,CD27,reference:对应基因名,,mAOC-CD27,抗体信息对照表260611-FY.xlsx,
+mAOC0624,CD79B,reference:对应基因名,,mAOC-CD79b,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0625,CD22,reference:对应基因名,,mAOC-CD22,抗体信息对照表260611-FY.xlsx,
+mAOC0626,PDCD1,reference:对应基因名,,mAOC-CD279,抗体信息对照表260611-FY.xlsx,
+mAOC0627,TIGIT,reference:对应基因名,,mAOC-TIGIT,抗体信息对照表260611-FY.xlsx,
+mAOC0628,CD14,reference:对应基因名,,mAOC-CD14,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0629,TSPAN8,reference:对应基因名,,mAOC-TSPAN8,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0630,CD84,reference:对应基因名,,mAOC-CD84,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0631,,reference:对应基因名,,Rabbit-Fc-1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0632,,reference:对应基因名,,Rabbit-Fc-2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0633,,reference:对应基因名,,Rabbit-Fc-3,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0634,,reference:对应基因名,,Rabbit-Fc-4,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0635,,reference:对应基因名,,Rabbit-Fc-5,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0636,,reference:对应基因名,,Rabbit-Fc-6,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0637,,reference:对应基因名,,Rabbit-Fc-7,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0638,,reference:对应基因名,,Rabbit-Fc-8,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0639,,reference:对应基因名,,Rabbit-Fc-9,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0640,,reference:对应基因名,,Rabbit-Fc-10,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0641,,reference:对应基因名,,mouse-Fc-1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0642,,reference:对应基因名,,mouse-Fc-2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0643,,reference:对应基因名,,mouse-Fc-3,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0644,,reference:对应基因名,,mouse-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0645,,reference:对应基因名,,mouse-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0646,,reference:对应基因名,,mouse-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0647,,reference:对应基因名,,mouse-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0648,,reference:对应基因名,,mouse-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0649,,reference:对应基因名,,mouse-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0650,,reference:对应基因名,,mouse-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0651,PECAM1,reference:对应基因名,,mAOC-CD31,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0652,CD1D,reference:对应基因名,,mAOC-CD1d,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0653,BTLA,reference:对应基因名,,mAOC-CD272,抗体信息对照表260611-FY.xlsx,
+mAOC0654,NT5E,reference:对应基因名,,mAOC-CD73,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0655,TRBC1,reference:对应基因名,,mAOC-TRBC,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0656,PTPRC,reference:对应基因名,,mAOC-CD45RO,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0657,CD4,reference:对应基因名,,mAOC-CD4,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0658,CD3E,reference:对应基因名,,mAOC-CD3,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0659,NCAM1,reference:对应基因名,,mAOC-CD56,抗体信息对照表260611-FY.xlsx,
+mAOC0660,CD4,reference:对应基因名,,mAOC-CD4,抗体信息对照表260611-FY.xlsx,
+mAOC0661,IL2RA,reference:对应基因名,,mAOC-CD25,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0662,SELL,reference:对应基因名,,mAOC-CD62L,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0663,PLAUR,inferred:reference/AOC marker alias,,mAOC-CD87,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0664,TNFRSF14,inferred:reference/AOC marker alias,,mAOC-CD270,抗体信息对照表260611-FY.xlsx,
+mAOC0665,LILRB2,reference:对应基因名,,mAOC-CD85k,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0666,ANPEP,inferred:reference/AOC marker alias,,mAOC-CD13,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0667,BST2,inferred:reference/AOC marker alias,,mAOC-CD317,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0668,CD300C,inferred:reference/AOC marker alias,,mAOC-CD300c,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0669,CD300LF,inferred:reference/AOC marker alias,,mAOC-CD300f,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0670,TLR10,inferred:reference/AOC marker alias,,mAOC-CD290,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0671,TREML2,inferred:reference/AOC marker alias,,mAOC-TREML2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0672,SCGB1A1,inferred:reference/AOC marker alias,,mAOC-SCGB1A1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0673,PROCR,inferred:reference/AOC marker alias,,mAOC-CD201,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0674,EPHB1,inferred:reference/AOC marker alias,,mAOC-EPHB1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0675,NECTIN2,inferred:reference/AOC marker alias,,mAOC-CD112,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0676,ITGA1,inferred:reference/AOC marker alias,,mAOC-CD49a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0677,LTBR,inferred:reference/AOC marker alias,,mAOC-LTBR,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0678,CD209,inferred:reference/AOC marker alias,,mAOC-CD209,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0679,ITGA2B,inferred:reference/AOC marker alias,,mAOC-CD41,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0680,TNFRSF4,inferred:reference/AOC marker alias,,mAOC-CD134,抗体信息对照表260611-FY.xlsx,
+mAOC0681,MS4A1,reference:对应基因名,,mAOC-CD20,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0682,PTPRC,inferred:reference/AOC marker alias,,mAOC-CD45,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0683,TNFRSF14,inferred:reference/AOC marker alias,,mAOC-CD270,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0684,IL7R,reference:对应基因名,,mAOC-CD127,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0685,LILRB2,reference:对应基因名,,mAOC-CD85d,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0686,SIGLEC7,reference:对应基因名,,mAOC-CD328-1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0687,MME,inferred:reference/AOC marker alias,,mAOC-CD10,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0688,CD69,inferred:reference/AOC marker alias,,mAOC-CD69,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0689,ITGAM,inferred:reference/AOC marker alias,,mAOC-CD11b,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0690,ANTIMOUSE,inferred:reference/AOC marker alias,,B2M-690,抗体信息对照表260611-FY.xlsx,
+mAOC0691,ANTIMOUSE,inferred:reference/AOC marker alias,,B2M-691,抗体信息对照表260611-FY.xlsx,
+mAOC0692,ANTIMOUSE,inferred:reference/AOC marker alias,,B2M-692,抗体信息对照表260611-FY.xlsx,
+mAOC0693,SIGLEC8,inferred:reference/AOC marker alias,,mAOC-SIGLEC8,抗体信息对照表260611-FY.xlsx,
+mAOC0694,IGG,inferred:reference/AOC marker alias,,IgG-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0695,CD209,inferred:reference/AOC marker alias,,mAOC-CD209,抗体信息对照表260611-FY.xlsx,
+mAOC0696,CD49E,inferred:reference/AOC marker alias,,mAOC-CD49e,抗体信息对照表260611-FY.xlsx,
+mAOC0697,CD196,inferred:reference/AOC marker alias,,mAOC-CD196,抗体信息对照表260611-FY.xlsx,
+mAOC0698,CD30,inferred:reference/AOC marker alias,,mAOC-CD30,抗体信息对照表260611-FY.xlsx,
+mAOC0699,KIT,inferred:same name/stage in reference,,mAOC-CD117,抗体信息对照表260611-FY.xlsx,
+mAOC0700,CD55,reference:对应基因名,,mAOC-CD55,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0702,BTLA,reference:对应基因名,,mAOC-CD272,抗体信息对照表260611-FY.xlsx,
+mAOC0703,EPHA2,inferred:reference/AOC marker alias,,mAOC-EPHA2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0704,LEPR,inferred:reference/AOC marker alias,,mAOC-LEPR,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0705,TRBC1,inferred:AOC row token matched reference gene,,mAOC-TRBC1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0707,ANPEP,inferred:reference/AOC marker alias,,mAOC-CD13,抗体信息对照表260611-FY.xlsx,
+mAOC0708,BST2,inferred:reference/AOC marker alias,,mAOC-CD317,抗体信息对照表260611-FY.xlsx,
+mAOC0709,VSIG4,inferred:reference/AOC marker alias,,mAOC-VSIG4,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0710,TNFRSF4,inferred:reference/AOC marker alias,,mAOC-CD134-2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0711,EPCAM,reference:对应基因名,,mAOC-CD326,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0712,CEACAM8,reference:对应基因名,,mAOC-CD66b,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0713,VSIR,inferred:AOC row token matched reference gene,,mAOC-VSIR,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0714,AXL,inferred:reference/AOC marker alias,,mAOC-AXL,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0715,SELPLG,reference:对应基因名,,mAOC-CD162,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0716,IFNAR2,inferred:reference/AOC marker alias,,mAOC-IFNAR2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0717,IFNAR1,inferred:reference/AOC marker alias,,mAOC-IFNAR1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0718,IL17RB,inferred:reference/AOC marker alias,,mAOC-IL17RB,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0719,ERBB3,reference:对应基因名,,mAOC-HER3,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0720,CLEC12A,inferred:reference/AOC marker alias,,mAOC-CD371,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0721,MET,inferred:reference/AOC marker alias,,mAOC-MET,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0722,TNFRSF4,inferred:reference/AOC marker alias,,mAOC-CD134-1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0723,IL17A,inferred:reference/AOC marker alias,,mAOC-IL17,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0724,CTLA4,inferred:reference/AOC marker alias,,mAOC-CD152,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0725,CD9,inferred:reference/AOC marker alias,,mAOC-CD9,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0726,TNR9,inferred:reference/AOC marker alias,,mAOC-CD137,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0727,CD206,inferred:reference/AOC marker alias,,mAOC-CD206,抗体信息对照表260611-FY.xlsx,
+mAOC0728,CD135,inferred:reference/AOC marker alias,,mAOC-CD135,抗体信息对照表260611-FY.xlsx,
+mAOC0729,CD62P,inferred:reference/AOC marker alias,,mAOC-CD62P,抗体信息对照表260611-FY.xlsx,
+mAOC0730,CD63,inferred:reference/AOC marker alias,,mAOC-CD63,抗体信息对照表260611-FY.xlsx,
+mAOC0731,CD59,inferred:reference/AOC marker alias,,mAOC-CD59,抗体信息对照表260611-FY.xlsx,
+mAOC0732,CD45RB,inferred:reference/AOC marker alias,,mAOC-CD45RB,抗体信息对照表260611-FY.xlsx,
+mAOC0733,,,,/,抗体信息对照表260611-FY.xlsx,
+mAOC0734,ANPEP,inferred:reference/AOC marker alias,,mAOC-CD13,抗体信息对照表260611-FY.xlsx,
+mAOC0740,IGG1,inferred:reference/AOC marker alias,,IgG1-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0741,IGG1,inferred:reference/AOC marker alias,,IgG1-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0742,KLRG1,inferred:AOC row token matched reference gene,,IgG1-Fc-1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0743,CCR4,inferred:AOC row token matched reference gene,,IgG1-Fc-2,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0744,EPOR,inferred:AOC row token matched reference gene,,IgG1-Fc-3,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0745,CD34,inferred:AOC row token matched reference gene,,IgG1-Fc-4,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0746,IGG1,inferred:reference/AOC marker alias,,IgG1-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0747,IGG1,inferred:reference/AOC marker alias,,IgG1-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0748,IGG1,inferred:reference/AOC marker alias,,IgG1-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0749,IGG1,inferred:reference/AOC marker alias,,IgG1-Fc,抗体信息对照表260611-FY.xlsx,
+mAOC0750,KLRG1,reference:对应基因名,,mAOC-KLRG1,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0751,CCR4,reference:对应基因名,,mAOC-CD194,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0752,EPOR,reference:对应基因名,,mAOC-EPOR,抗体信息对照表260611-FY.xlsx,
+mAOC0753,CD34,reference:对应基因名,,mAOC-CD34,抗体信息对照表260611-FY.xlsx,
+mAOC0754,CD158E1,inferred:reference/AOC marker alias,,mAOC-CD158e1,抗体信息对照表260611-FY.xlsx,
+mAOC0755,ITGB3,inferred:reference/AOC marker alias,,mAOC-CD61,抗体信息对照表260611-FY.xlsx,
+mAOC0756,CD298,inferred:reference/AOC marker alias,,mAOC-CD298,抗体信息对照表260611-FY.xlsx,
+mAOC0757,CD52,inferred:reference/AOC marker alias,,mAOC-CD52,抗体信息对照表260611-FY.xlsx,
+mAOC0758,ITGA1,inferred:reference/AOC marker alias,,mAOC-CD49a,抗体信息对照表260611-FY.xlsx,
+mAOC0759,KLRD1,inferred:same name/stage in reference,,mAOC-CD94,抗体信息对照表260611-FY.xlsx,
+mAOC0760,CD43,inferred:reference/AOC marker alias,,mAOC-CD43,抗体信息对照表260611-FY.xlsx,
+mAOC0775,FGFR3,reference:对应基因名,,mAOC-CD333,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0776,PROM1,reference:对应基因名,,mAOC-CD133,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0777,CSF2RB,reference:对应基因名,,mAOC-CD131,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0778,HLA-DRA,reference:对应基因名,,mAOC-HLA-DRA,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0779,CD33,reference:对应基因名,,mAOC-CD33,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0780,CD151,inferred:reference/AOC marker alias,,mAOC-CD151,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0781,CD3E,inferred:AOC row token matched reference gene,,mAOC-CD3e,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0782,CD8B,inferred:reference/AOC marker alias,,mAOC-CD8b,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0783,RB16HAVCR1,inferred:reference/AOC marker alias,,mAOC-CD365,抗体信息对照表260611-FY.xlsx,
+mAOC0784,KLRC1,inferred:reference/AOC marker alias,,mAOC-CD159a,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0785,GP1BB,inferred:reference/AOC marker alias,,mAOC-CD42c,抗体信息对照表260611-FY.xlsx,2026-06-24 11:22:42
+mAOC0786,F11R,inferred:reference/AOC marker alias,,mAOC-CD321,抗体信息对照表260611-FY.xlsx,
+mAOC0787,JAM3,inferred:reference/AOC marker alias,,mAOC-JAM3,抗体信息对照表260611-FY.xlsx,
+mAOC0788,FAS,inferred:same name/stage in reference,,mAOC-CD95,抗体信息对照表260611-FY.xlsx,
+mAOC0789,C5AR1,inferred:same name/stage in reference,,mAOC-CD88,抗体信息对照表260611-FY.xlsx,
+mAOC0790,CD8A,inferred:same name/stage in reference,,mAOC-CD8a,抗体信息对照表260611-FY.xlsx,
+mAOC0791,NT5E,inferred:same name/stage in reference,,mAOC-CD73,抗体信息对照表260611-FY.xlsx,
+mAOC0792,CD2,inferred:same name/stage in reference,,mAOC-CD2,抗体信息对照表260611-FY.xlsx,
+mAOC0793,HMGB1,inferred:same name/stage in reference,,mAOC-HMGB1,抗体信息对照表260611-FY.xlsx,
+mAOC0794,CD3E,inferred:reference/AOC marker alias,,mAOC-CD3e,抗体信息对照表260611-FY.xlsx,
+mAOC0795,EPCAM,inferred:same name/stage in reference,,mAOC-CD326,抗体信息对照表260611-FY.xlsx,
+mAOC0796,PVR,inferred:same name/stage in reference,,mAOC-CD155,抗体信息对照表260611-FY.xlsx,
+mAOC0797,CD68,inferred:same name/stage in reference,,mAOC-CD68,抗体信息对照表260611-FY.xlsx,
+mAOC0798,TF,inferred:same name/stage in reference,,mAOC-CD142,抗体信息对照表260611-FY.xlsx,
+mAOC0799,CTSD,inferred:reference/AOC marker alias,,mAOC-CTSD,抗体信息对照表260611-FY.xlsx,
+mAOC0800,IL22,inferred:reference/AOC marker alias,,mAOC-IL22,抗体信息对照表260611-FY.xlsx,
+mAOC0801,IFNG,inferred:reference/AOC marker alias,,mAOC-IFNG,抗体信息对照表260611-FY.xlsx,
+mAOC0802,CD74,inferred:same name/stage in reference,,mAOC-CD74,抗体信息对照表260611-FY.xlsx,
+mAOC0803,IL6,inferred:reference/AOC marker alias,,mAOC-IL6,抗体信息对照表260611-FY.xlsx,
+mAOC0804,IL13,inferred:reference/AOC marker alias,,mAOC-IL13,抗体信息对照表260611-FY.xlsx,
+mAOC0805,IL17A,inferred:reference/AOC marker alias,,mAOC-IL17,抗体信息对照表260611-FY.xlsx,
+mAOC0806,IL23A,inferred:reference/AOC marker alias,,mAOC-IL23A,抗体信息对照表260611-FY.xlsx,
+mAOC0807,TF,inferred:same name/stage in reference,,mAOC-CD142,抗体信息对照表260611-FY.xlsx,
+mAOC0808,KLRK1,inferred:same name/stage in reference,,mAOC-CD314,抗体信息对照表260611-FY.xlsx,
+mAOC0809,IGSF3,inferred:reference/AOC marker alias,,mAOC-IGSF3,抗体信息对照表260611-FY.xlsx,
+mAOC0810,SMOC1,inferred:reference/AOC marker alias,,mAOC-SMOC1,抗体信息对照表260611-FY.xlsx,
+mAOC0811,APOE,inferred:reference/AOC marker alias,,mAOC-APOE,抗体信息对照表260611-FY.xlsx,
+mAOC0812,NCSTN,inferred:reference/AOC marker alias,,mAOC-NCSTN,抗体信息对照表260611-FY.xlsx,
+mAOC0813,ICOS,inferred:same name/stage in reference,,mAOC-CD278,抗体信息对照表260611-FY.xlsx,
+mAOC0814,NOTCH3,inferred:same name/stage in reference,,mAOC-NOTCH3,抗体信息对照表260611-FY.xlsx,
