@@ -1,0 +1,176 @@
+feature_id	feature_name	target_class	human_gene_symbol	external_target_name	validation_assay	validation_feature	mapping_method	mapping_confidence	llm_suggested_target_class	llm_suggested_gene_symbol	llm_confidence	llm_reason	needs_manual_review	manual_curated_target_class	manual_curated_gene_symbol	manual_notes
+mAOC433	HTO-433	hashtag		HTO-433	HTO	HTO-433	rule:hashtag	0.95					FALSE			
+mAOC434	HTO-434	hashtag		HTO-434	HTO	HTO-434	rule:hashtag	0.95					FALSE			
+mAOC435	HTO-435	hashtag		HTO-435	HTO	HTO-435	rule:hashtag	0.95					FALSE			
+mAOC436	HTO-436	hashtag		HTO-436	HTO	HTO-436	rule:hashtag	0.95					FALSE			
+mAOC437	HTO-437	hashtag		HTO-437	HTO	HTO-437	rule:hashtag	0.95					FALSE			
+FADT0037	mAOC-S	spike_control		SPIKE-FP-C77G12	none		rule:spike_control	1.00					FALSE			
+FADT0040	mAOC-CD45RA	cd45_isoform	PTPRC		CD45isoforms	PTPRC-RA	rule:cd45_isoform	1.00					FALSE			
+FADT0041	mAOC-CD80	gene	CD80		RNA	CD80	map:id_left_join	0.95					FALSE			
+FADT0042	mAOC-CD21	gene	CR2		RNA	CR2	map:id_left_join	0.95					FALSE			
+FADT0043	mAOC-CD19	gene	CD19		RNA	CD19	map:id_left_join	0.95					FALSE			
+FADT0046	mAOC-CD4	gene	CD4		RNA	CD4	map:id_left_join	0.95					FALSE			
+FADT0158	mAOC-CD27	gene	CD27		RNA	CD27	map:id_left_join	0.95					FALSE			
+FADT0159	mAOC-CD28	gene	CD28		RNA	CD28	map:id_left_join	0.95					FALSE			
+FADT0160	mAOC-CD161	gene	KLRB1		RNA	KLRB1	map:id_left_join	0.95					FALSE			
+FADT0161	mAOC-CD38	gene	CD38		RNA	CD38	map:id_left_join	0.95					FALSE			
+FADT0166	mAOC-CD1d	gene	CD1D		RNA	CD1D	map:id_left_join	0.95					FALSE			
+FADT0167	mAOC-CD22	gene	CD22		RNA	CD22	map:id_left_join	0.95					FALSE			
+FADT0170	Tag-ALFA	gene	Tag-ALFA		RNA	Tag-ALFA	map:id_left_join	0.95					FALSE			
+FADT0175	mAOC-CD340	gene	ERBB2		RNA	ERBB2	map:id_left_join	0.95					FALSE			
+FADT0180	mAOC-CD86	gene	CD86		RNA	CD86	map:id_left_join	0.95					FALSE			
+FADT0186	mAOC-CD223	gene	LAG3		RNA	LAG3	map:id_left_join	0.95					FALSE			
+mAOC0297	mAOC-CD100	gene	SEMA4D		RNA	SEMA4D	map:id_left_join	0.95					FALSE			
+mAOC0301	mAOC-CD16	gene	FCGR3A/FCGR3B		RNA	FCGR3A/FCGR3B	map:id_left_join	0.95					FALSE			
+mAOC0303	mAOC-CD56	gene	NCAM1		RNA	NCAM1	map:id_left_join	0.95					FALSE			
+mAOC0305	mAOC-CD8a	gene	CD8A		RNA	CD8A	map:id_left_join	0.95					FALSE			
+mAOC0315	mAOC-CD3	gene	CD3E		RNA	CD3E	map:id_left_join	0.95					FALSE			
+mAOC0319	mAOC-CD79b	gene	CD79B		RNA	CD79B	map:id_left_join	0.95					FALSE			
+mAOC0321	mAOC-CD57	gene	B3GAT1		RNA	B3GAT1	map:id_left_join	0.95					FALSE			
+mAOC0324	mAOC-CD49d	gene	ITGA4		RNA	ITGA4	map:id_left_join	0.95					FALSE			
+mAOC0326	mAOC-CD5	gene	CD5		RNA	CD5	map:id_left_join	0.95					FALSE			
+mAOC0330	mAOC-CD49b	gene	ITGA2		RNA	ITGA2	map:id_left_join	0.95					FALSE			
+mAOC0331	mAOC-CD226	gene	CD226		RNA	CD226	map:id_left_join	0.95					FALSE			
+mAOC0334	mAOC-CD96	gene	CD96		RNA	CD96	map:id_left_join	0.95					FALSE			
+mAOC0336	mAOC-CD34	gene	CD34		RNA	CD34	map:id_left_join	0.95					FALSE			
+mAOC0339	mAOC-CD133	gene	PROM1		RNA	PROM1	map:id_left_join	0.95					FALSE			
+mAOC0341	mAOC-HLA-DRA	gene	HLA-DRA		RNA	HLA-DRA	map:id_left_join	0.95					FALSE			
+mAOC0440	mAOC-CD70	gene	CD70		RNA	CD70	map:id_left_join	0.95					FALSE			
+mAOC0442	mAOC-CD105	gene	ENG		RNA	ENG	map:id_left_join	0.95					FALSE			
+mAOC0444	mAOC-CD124	gene	IL4R		RNA	IL4R	map:id_left_join	0.95					FALSE			
+mAOC0448	mAOC-CD155	gene	PVR		RNA	PVR	map:id_left_join	0.95					FALSE			
+mAOC0450	mAOC-CD40	gene	CD40		RNA	CD40	map:id_left_join	0.95					FALSE			
+mAOC0451	mAOC-CD40	gene	CD40		RNA	CD40	map:id_left_join	0.95					FALSE			
+mAOC0452	mAOC-CD154	gene	CD40LG		RNA	CD40LG	map:id_left_join	0.95					FALSE			
+mAOC0453	mAOC-HLA-ABC	gene	HLA-A/HLA-B/HLA-C		RNA	HLA-A/HLA-B/HLA-C	map:id_left_join	0.95					FALSE			
+mAOC0454	mAOC-CD123	gene	IL3RA		RNA	IL3RA	map:id_left_join	0.95					FALSE			
+mAOC0455	mAOC-CD49f	gene	ITGA6		RNA	ITGA6	map:id_left_join	0.95					FALSE			
+mAOC0459	mAOC-CD183	gene	CXCR3		RNA	CXCR3	map:id_left_join	0.95					FALSE			
+mAOC0460	mAOC-CD195	gene	CCR5		RNA	CCR5	map:id_left_join	0.95					FALSE			
+mAOC0461	mAOC-CD185	gene	CXCR5		RNA	CXCR5	map:id_left_join	0.95					FALSE			
+mAOC0464	mAOC-CD141	gene	THBD		RNA	THBD	map:id_left_join	0.95					FALSE			
+mAOC0465	mAOC-CD58	gene	CD58		RNA	CD58	map:id_left_join	0.95					FALSE			
+mAOC0467	mAOC-CD24	gene	CD24		RNA	CD24	map:id_left_join	0.95					FALSE			
+mAOC0470	mAOC-CD192	gene	CCR2		RNA	CCR2	map:id_left_join	0.95					FALSE			
+mAOC0472	mAOC-CD163	gene	CD163		RNA	CD163	map:id_left_join	0.95					FALSE			
+mAOC0473	mAOC-CD163	gene	CD163		RNA	CD163	map:id_left_join	0.95					FALSE			
+mAOC0474	mAOC-CD303	gene	CLEC4C		RNA	CLEC4C	map:id_left_join	0.95					FALSE			
+mAOC0476	mAOC-CD127	gene	IL7R		RNA	IL7R	map:id_left_join	0.95					FALSE			
+mAOC0478	mAOC-CD93	gene	CD93		RNA	CD93	map:id_left_join	0.95					FALSE			
+mAOC0479	mAOC-CD23	gene	FCER2		RNA	FCER2	map:id_left_join	0.95					FALSE			
+mAOC0481	mAOC-CD71	gene	TFRC		RNA	TFRC	map:id_left_join	0.95					FALSE			
+mAOC0482	mAOC-CD7	gene	CD7		RNA	CD7	map:id_left_join	0.95					FALSE			
+mAOC0485	mAOC-CD25	gene	IL2RA		RNA	IL2RA	map:id_left_join	0.95					FALSE			
+mAOC0486	mAOC-CD2	gene	CD2		RNA	CD2	map:id_left_join	0.95					FALSE			
+mAOC0488	mAOC-CD62L	gene	SELL		RNA	SELL	map:id_left_join	0.95					FALSE			
+mAOC0490	mAOC-CD158a	gene	KIR2DL1		RNA	KIR2DL1	map:id_left_join	0.95					FALSE			
+mAOC0492	mAOC-CD115	gene	CSF1R		RNA	CSF1R	map:id_left_join	0.95					FALSE			
+mAOC0496	mAOC-CD272	gene	BTLA		RNA	BTLA	map:id_left_join	0.95					FALSE			
+mAOC0500	mAOC-CD16a	gene	FCGR3A		RNA	FCGR3A	map:id_left_join	0.95					FALSE			
+mAOC0505	mAOC-CD35	gene	CR1		RNA	CR1	map:id_left_join	0.95					FALSE			
+mAOC0506	mAOC-CD31	gene	PECAM1		RNA	PECAM1	map:id_left_join	0.95					FALSE			
+mAOC0507	mAOC-CD11c	gene	ITGAX		RNA	ITGAX	map:id_left_join	0.95					FALSE			
+mAOC0508	mAOC-CD157	gene	BST1		RNA	BST1	map:id_left_join	0.95					FALSE			
+mAOC0509	mAOC-CD277	gene	BTN3A1		RNA	BTN3A1	map:id_left_join	0.95					FALSE			
+mAOC0518-1	mAOC-ACVR2B	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC0519-1	mAOC-CD246	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC0520	mAOC-TNFA	gene	TNF		RNA	TNF	map:id_left_join	0.95					FALSE			
+mAOC0522-1	mAOC-CD350	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC0523-1	mAOC-GLP1R	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC0524	mAOC-GPC2	gene	GPC2		RNA	GPC2	map:id_left_join	0.95					FALSE			
+mAOC0525	mAOC-HTR2B	gene	HTR2B		RNA	HTR2B	map:id_left_join	0.95					FALSE			
+mAOC0526	mAOC-CD213a2	gene	IL13RA2		RNA	IL13RA2	map:id_left_join	0.95					FALSE			
+mAOC0527	mAOC-CD220	gene	INSR		RNA	INSR	map:id_left_join	0.95					FALSE			
+mAOC0528	mAOC-Galectin-3	gene	LGALS3		RNA	LGALS3	map:id_left_join	0.95					FALSE			
+mAOC0529	mAOC-CD257	gene	TNFSF13B		RNA	TNFSF13B	map:id_left_join	0.95					FALSE			
+mAOC0530	mAOC-CD279	gene	PDCD1		RNA	PDCD1	map:id_left_join	0.95					FALSE			
+mAOC0531	mAOC-TNFSF12	gene	TNFSF12		RNA	TNFSF12	map:id_left_join	0.95					FALSE			
+mAOC0532	mAOC-CD314	gene	KLRK1		RNA	KLRK1	map:id_left_join	0.95					FALSE			
+mAOC0533	mAOC-CD274	gene	CD274		RNA	CD274	map:id_left_join	0.95					FALSE			
+mAOC0534	mAOC-CD64	gene	FCGR1A		RNA	FCGR1A	map:id_left_join	0.95					FALSE			
+mAOC0540	mAOC-CD117	gene	KIT		RNA	KIT	map:id_left_join	0.95					FALSE			
+mAOC0541	mAOC-KLB	gene	KLB		RNA	KLB	map:id_left_join	0.95					FALSE			
+mAOC0542	mAOC-CD107a	gene	LAMP1		RNA	LAMP1	map:id_left_join	0.95					FALSE			
+mAOC0543	mAOC-GARP	gene	LRRC32		RNA	LRRC32	map:id_left_join	0.95					FALSE			
+mAOC0544	mAOC-MICA	gene	MICA		RNA	MICA	map:id_left_join	0.95					FALSE			
+mAOC0545	mAOC-CD335	gene	NCR1		RNA	NCR1	map:id_left_join	0.95					FALSE			
+mAOC0548	mAOC-SLC40A1	gene	SLC40A1		RNA	SLC40A1	map:id_left_join	0.95					FALSE			
+mAOC0549	mAOC-CD366	gene	HAVCR2		RNA	HAVCR2	map:id_left_join	0.95					FALSE			
+mAOC0550	mAOC-CD262	gene	TNFRSF10B		RNA	TNFRSF10B	map:id_left_join	0.95					FALSE			
+mAOC0551	mAOC-CD269	gene	TNFRSF17		RNA	TNFRSF17	map:id_left_join	0.95					FALSE			
+mAOC0553	mAOC-TSHR	gene	TSHR		RNA	TSHR	map:id_left_join	0.95					FALSE			
+mAOC0554	mAOC-CD309	gene	TNFRSF9		RNA	TNFRSF9	map:id_left_join	0.95					FALSE			
+mAOC0555	mAOC-VISTA	gene	VSIR		RNA	VSIR	map:id_left_join	0.95					FALSE			
+mAOC0556	mAOC-CD197	gene	CCR7		RNA	CCR7	map:id_left_join	0.95					FALSE			
+mAOC0561	mAOC-CD32b	gene	FCGR2B		RNA	FCGR2B	map:id_left_join	0.95					FALSE			
+mAOC0562	mAOC-CD332	gene	FGFR2		RNA	FGFR2	map:id_left_join	0.95					FALSE			
+mAOC0564	mAOC-CD338	gene	ABCG2		RNA	ABCG2	map:id_left_join	0.95					FALSE			
+mAOC0567	mAOC-CD20	gene	MS4A1		RNA	MS4A1	map:id_left_join	0.95					FALSE			
+mAOC0569	mAOC-FZD5	gene	FZD5		RNA	FZD5	map:id_left_join	0.95					FALSE			
+mAOC0570	mAOC-GLP1R	gene	GLP1R		RNA	GLP1R	map:id_left_join	0.95					FALSE			
+mAOC0576	mAOC-SIGLEC15	gene	SIGLEC15		RNA	SIGLEC15	map:id_left_join	0.95					FALSE			
+mAOC0580	mAOC-CD202b	gene	TEK		RNA	TEK	map:id_left_join	0.95					FALSE			
+mAOC0581	mAOC-CD154	gene	CD40LG		RNA	CD40LG	map:id_left_join	0.95					FALSE			
+mAOC0582	mAOC-CD46	gene	CD46		RNA	CD46	map:id_left_join	0.95					FALSE			
+mAOC0583	mAOC-CD74	gene	CD74		RNA	CD74	map:id_left_join	0.95					FALSE			
+mAOC0584	mAOC-CD116	gene	CSF2RA		RNA	CSF2RA	map:id_left_join	0.95					FALSE			
+mAOC0585	mAOC-FCER1A	gene	FCER1A		RNA	FCER1A	map:id_left_join	0.95					FALSE			
+mAOC0586	mAOC-CD50	gene	ICAM3		RNA	ICAM3	map:id_left_join	0.95					FALSE			
+mAOC0587	mAOC-CD210b	gene	IL10RB		RNA	IL10RB	map:id_left_join	0.95					FALSE			
+mAOC0588	mAOC-CD218a	gene	IL18R1		RNA	IL18R1	map:id_left_join	0.95					FALSE			
+mAOC0589	mAOC-IL1RAP	gene	IL1RAP		RNA	IL1RAP	map:id_left_join	0.95					FALSE			
+mAOC0590	mAOC-CD360	gene	IL21R		RNA	IL21R	map:id_left_join	0.95					FALSE			
+mAOC0591	mAOC-CD85f	gene	LILRA5		RNA	LILRA5	map:id_left_join	0.95					FALSE			
+mAOC0592	mAOC-CD85a	gene	LILRB3		RNA	LILRB3	map:id_left_join	0.95					FALSE			
+mAOC0593	mAOC-CD6	gene	CD6		RNA	CD6	map:id_left_join	0.95					FALSE			
+mAOC0598	mAOC-CD89	gene	FCAR		RNA	FCAR	map:id_left_join	0.95					FALSE			
+mAOC0599	mAOC-CD23	gene	FCER2		RNA	FCER2	map:id_left_join	0.95					FALSE			
+mAOC0600	mAOC-CD316	gene	IGSF8		RNA	IGSF8	map:id_left_join	0.95					FALSE			
+mAOC0601	mAOC-CD126	gene	IL6R		RNA	IL6R	map:id_left_join	0.95					FALSE			
+mAOC0602	mAOC-CD132	gene	IL2RG		RNA	IL2RG	map:id_left_join	0.95					FALSE			
+mAOC0603	mAOC-CD130	gene	IL6ST		RNA	IL6ST	map:id_left_join	0.95					FALSE			
+mAOC0604	mAOC-CD127	gene	IL7R		RNA	IL7R	map:id_left_join	0.95					FALSE			
+mAOC0605	mAOC-CD158k	gene	KIR3DL2		RNA	KIR3DL2	map:id_left_join	0.95					FALSE			
+mAOC0606	mAOC-CD98	gene	SLC3A2		RNA	SLC3A2	map:id_left_join	0.95					FALSE			
+mAOC0607	mAOC-TGFBR2	gene	TGFBR2		RNA	TGFBR2	map:id_left_join	0.95					FALSE			
+mAOC0608	mAOC-CDH8	gene	CDH8		RNA	CDH8	map:id_left_join	0.95					FALSE			
+mAOC0610	mAOC-CD334	gene	FGFR4		RNA	FGFR4	map:id_left_join	0.95					FALSE			
+mAOC0611	mAOC-CD166	gene	ALCAM		RNA	ALCAM	map:id_left_join	0.95					FALSE			
+mAOC0613	mAOC-CD66a	gene	CEACAM1		RNA	CEACAM1	map:id_left_join	0.95					FALSE			
+mAOC0614	mAOC-F2	gene	F2		RNA	F2	map:id_left_join	0.95					FALSE			
+mAOC0615	mAOC-SIGIRR	gene	SIGIRR		RNA	SIGIRR	map:id_left_join	0.95					FALSE			
+mAOC0616	mAOC-CTSS	gene	CTSS		RNA	CTSS	map:id_left_join	0.95					FALSE			
+mAOC0617	mAOC-CSF3	gene	CSF3		RNA	CSF3	map:id_left_join	0.95					FALSE			
+mAOC0618	mAOC-SORT1	gene	SORT1		RNA	SORT1	map:id_left_join	0.95					FALSE			
+mAOC0619	mAOC-ROR2	gene	ROR2		RNA	ROR2	map:id_left_join	0.95					FALSE			
+mAOC0629	mAOC-TSPAN8	gene	TSPAN8		RNA	TSPAN8	map:id_left_join	0.95					FALSE			
+mAOC0630	mAOC-CD84	gene	CD84		RNA	CD84	map:id_left_join	0.95					FALSE			
+mAOC363	mAOC-CD47	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC365	mAOC-CD29	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC366	mAOC-CD244	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC373	mAOC-CD81	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC374	mAOC-CD32	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC375	mAOC-CD162	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC376	mAOC-CD357	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC377	mAOC-CD326	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC378	mAOC-TGFBI	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC379	mAOC-CD68	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC381	mAOC-CD102	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC382	mAOC-TIGIT	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC383	mAOC-CD146	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC384	mAOC-CD158b2	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC386	mAOC-CD85j	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC387	mAOC-CD119	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC388	mAOC-CD305	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC391	mAOC-CD304	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC392	mAOC-CD352	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC411	mAOC-CD122	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC413	mAOC-CD116	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC415	mAOC-CD158b1	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC416	mAOC-CD278	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC417	mAOC-CD18	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC419	mAOC-CD11a	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC421	mAOC-CD37	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC422	mAOC-CD26	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC423	mAOC-CD39	ambiguous			manual		unresolved	0.00					TRUE			
+mAOC426	mAOC-CD172a	ambiguous			manual		unresolved	0.00					TRUE			
