@@ -41,6 +41,8 @@ OUTPUT_COLUMNS = [
 # This table records this run's LLM-assisted judgments for low-confidence rows.
 # It is intentionally explicit so the result is reproducible and reviewable.
 LLM_SUGGESTIONS = {
+    "mAOC0301": ("gene", "FCGR3A", "RNA", "FCGR3A", 0.86, "CD16 maps to FCGR3A/FCGR3B in the reference map; select FCGR3A as the single RNA validation feature for this workflow."),
+    "mAOC0453": ("gene", "HLA-A", "RNA", "HLA-A", 0.86, "HLA-ABC maps to HLA-A/HLA-B/HLA-C in the reference map; select HLA-A as the single RNA validation feature for this workflow."),
     "mAOC0518-1": ("gene", "ACVR2B", "RNA", "ACVR2B", 0.96, "Feature name directly names the human gene ACVR2B."),
     "mAOC0519-1": ("gene", "ALK", "RNA", "ALK", 0.90, "CD246 is commonly used for ALK."),
     "mAOC0522-1": ("gene", "FZD10", "RNA", "FZD10", 0.92, "CD350 corresponds to FZD10."),
@@ -128,8 +130,11 @@ def apply_review(row: dict[str, str], threshold: float) -> dict[str, str]:
     for column in OUTPUT_COLUMNS:
         reviewed.setdefault(column, "")
 
+    feature_id = row["feature_id"]
+    suggestion = LLM_SUGGESTIONS.get(feature_id)
+
     confidence = parse_confidence(row.get("mapping_confidence", ""))
-    if confidence >= threshold:
+    if confidence >= threshold and suggestion is None:
         reviewed["llm_model"] = ""
         reviewed["llm_suggested_target_class"] = ""
         reviewed["llm_suggested_gene_symbol"] = ""
@@ -139,8 +144,6 @@ def apply_review(row: dict[str, str], threshold: float) -> dict[str, str]:
         reviewed["llm_reason"] = ""
         return reviewed
 
-    feature_id = row["feature_id"]
-    suggestion = LLM_SUGGESTIONS.get(feature_id)
     if suggestion is None:
         reviewed["llm_model"] = "codex_manual_review"
         reviewed["llm_confidence"] = "0.00"

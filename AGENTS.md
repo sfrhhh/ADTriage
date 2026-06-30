@@ -20,7 +20,7 @@
 - `SPIKE`、`IgG`、`IgFc`、`isotype`、`control`、`negative control`、`hashing control`、`background control` 等对照通常不强制映射 human gene symbol，`validation_assay` 设为 `none`。
 
 ## 分析与输出
-- LLM 只用于 unresolved 或 ambiguous feature；输出必须为结构化 JSON，`confidence < 0.8` 时进入人工审查。
+- LLM/curation 用于 unresolved、ambiguous 或多基因 validation feature；输出必须结构化，`confidence < 0.8` 时进入人工审查。
 - 输出表应保留可追溯字段，包括 `feature_id`、`feature_name`、`target_class`、`human_gene_symbol`、`validation_assay`、`validation_feature`、`mapping_method`、`mapping_confidence`、`needs_manual_review`。
 - 修改或新增分析脚本后，按风险运行语法检查、小样本测试或关键输出表检查；汇报时只说明实际完成的验证。
 
@@ -32,3 +32,4 @@
 | `HTO-*` | 视为 hashtag，后续对应 Seurat 对象中的 `HTO` assay。 |
 | `mAOCxxxx-1` 这类带后缀 id | 可能无法直接与 `mAOC_gene_symbol_map.csv$id` 左连接，需通过名称或人工/LLM 补判。 |
 | `CD32`、`CD158b1/b2` | CD alias 存在亚型或多基因歧义，LLM 结果也应保留人工复核。 |
+| `FCGR3A/FCGR3B`、`HLA-A/HLA-B/HLA-C` 等多基因 symbol | 初始表保留原始多基因写法并进入 LLM/curation；绘图用 review 后的单一 `validation_feature`，当前 `mAOC-CD16 -> FCGR3A`、`mAOC-HLA-ABC -> HLA-A`。 |

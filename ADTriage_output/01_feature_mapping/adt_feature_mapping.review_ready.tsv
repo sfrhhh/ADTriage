@@ -21,7 +21,7 @@ FADT0175	mAOC-CD340	gene	ERBB2		RNA	ERBB2	map:id_left_join	0.95					FALSE
 FADT0180	mAOC-CD86	gene	CD86		RNA	CD86	map:id_left_join	0.95					FALSE			
 FADT0186	mAOC-CD223	gene	LAG3		RNA	LAG3	map:id_left_join	0.95					FALSE			
 mAOC0297	mAOC-CD100	gene	SEMA4D		RNA	SEMA4D	map:id_left_join	0.95					FALSE			
-mAOC0301	mAOC-CD16	gene	FCGR3A/FCGR3B		RNA	FCGR3A/FCGR3B	map:id_left_join	0.95					FALSE			
+mAOC0301	mAOC-CD16	gene	FCGR3A/FCGR3B		RNA	FCGR3A/FCGR3B	map:id_left_join	0.70					TRUE			
 mAOC0303	mAOC-CD56	gene	NCAM1		RNA	NCAM1	map:id_left_join	0.95					FALSE			
 mAOC0305	mAOC-CD8a	gene	CD8A		RNA	CD8A	map:id_left_join	0.95					FALSE			
 mAOC0315	mAOC-CD3	gene	CD3E		RNA	CD3E	map:id_left_join	0.95					FALSE			
@@ -42,7 +42,7 @@ mAOC0448	mAOC-CD155	gene	PVR		RNA	PVR	map:id_left_join	0.95					FALSE
 mAOC0450	mAOC-CD40	gene	CD40		RNA	CD40	map:id_left_join	0.95					FALSE			
 mAOC0451	mAOC-CD40	gene	CD40		RNA	CD40	map:id_left_join	0.95					FALSE			
 mAOC0452	mAOC-CD154	gene	CD40LG		RNA	CD40LG	map:id_left_join	0.95					FALSE			
-mAOC0453	mAOC-HLA-ABC	gene	HLA-A/HLA-B/HLA-C		RNA	HLA-A/HLA-B/HLA-C	map:id_left_join	0.95					FALSE			
+mAOC0453	mAOC-HLA-ABC	gene	HLA-A/HLA-B/HLA-C		RNA	HLA-A/HLA-B/HLA-C	map:id_left_join	0.70					TRUE			
 mAOC0454	mAOC-CD123	gene	IL3RA		RNA	IL3RA	map:id_left_join	0.95					FALSE			
 mAOC0455	mAOC-CD49f	gene	ITGA6		RNA	ITGA6	map:id_left_join	0.95					FALSE			
 mAOC0459	mAOC-CD183	gene	CXCR3		RNA	CXCR3	map:id_left_join	0.95					FALSE			

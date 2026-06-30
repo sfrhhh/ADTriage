@@ -203,6 +203,10 @@ def is_control(feature_name: str, genesymbol: str, last_seen_name: str, notes: s
     return bool(CONTROL_RE.search(text))
 
 
+def is_multi_gene_symbol(genesymbol: str) -> bool:
+    return "/" in genesymbol
+
+
 def classify_feature(fb_row: dict[str, str], map_row: dict[str, str] | None) -> dict[str, str]:
     feature_id = clean(fb_row.get("id"))
     feature_name = clean(fb_row.get("name"))
@@ -309,6 +313,7 @@ def classify_feature(fb_row: dict[str, str], map_row: dict[str, str] | None) -> 
         return base
 
     if genesymbol:
+        needs_llm_review = is_multi_gene_symbol(genesymbol)
         base.update(
             {
                 "target_class": "gene",
@@ -316,8 +321,14 @@ def classify_feature(fb_row: dict[str, str], map_row: dict[str, str] | None) -> 
                 "validation_assay": "RNA",
                 "validation_feature": genesymbol,
                 "mapping_method": "map:id_left_join",
-                "mapping_confidence": "0.95",
-                "mapping_evidence": "genesymbol found by FB_ref.id to mAOC_gene_symbol_map.id left join",
+                "mapping_confidence": "0.70" if needs_llm_review else "0.95",
+                "mapping_evidence": (
+                    "multi-gene symbol found by id left join; requires LLM/manual selection of one RNA validation feature"
+                    if needs_llm_review
+                    else "genesymbol found by FB_ref.id to mAOC_gene_symbol_map.id left join"
+                ),
+                "needs_llm_review": bool_str(needs_llm_review),
+                "needs_manual_review": bool_str(needs_llm_review),
             }
         )
         return base

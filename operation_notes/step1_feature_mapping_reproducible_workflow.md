@@ -131,6 +131,8 @@ ADTriage_output/01_feature_mapping/adt_feature_mapping.review_ready.tsv
 
 ### 5.4 生成 LLM review 表
 
+本步骤不仅处理 `mapping_confidence < 0.8` 的 unresolved/ambiguous feature，也处理初始映射中含 `/` 的多基因 validation feature。多基因条目在 `initial` 表中保留原始 symbol，并被降为 `mapping_confidence = 0.70`、`needs_llm_review = TRUE`，随后在 LLM review 表中收敛为一个可直接用于 RNA FeatureDimPlot 的 `validation_feature`。
+
 ```bash
 /data/home/frsui/miniconda3/bin/conda run -n base python -B scripts/apply_llm_feature_mapping_review.py \
   --initial ADTriage_output/01_feature_mapping/adt_feature_mapping.initial.tsv \
@@ -163,6 +165,29 @@ validation_assay = RNA
 validation_feature = genesymbol
 mapping_method = map:id_left_join
 mapping_confidence = 0.95
+```
+
+若 `genesymbol` 为多基因写法，例如 `FCGR3A/FCGR3B` 或 `HLA-A/HLA-B/HLA-C`：
+
+```text
+initial 表：
+human_gene_symbol = original multi-gene symbol
+validation_feature = original multi-gene symbol
+mapping_confidence = 0.70
+needs_llm_review = TRUE
+needs_manual_review = TRUE
+
+llm_review 表：
+human_gene_symbol = selected single gene
+validation_feature = selected single gene
+mapping_method = llm:name_to_gene
+```
+
+本次多基因条目处理：
+
+```text
+mAOC0301 / mAOC-CD16     FCGR3A/FCGR3B -> RNA:FCGR3A
+mAOC0453 / mAOC-HLA-ABC  HLA-A/HLA-B/HLA-C -> RNA:HLA-A
 ```
 
 ### 6.2 CD45 isoform
@@ -308,7 +333,7 @@ LLM 补判后的映射表。
 用途：
 
 ```text
-基于 initial 表，对 mapping_confidence < 0.8 的 feature 补充 gene symbol 判断，并更新映射字段。
+基于 initial 表，对 mapping_confidence < 0.8 或多基因 validation feature 补充 gene symbol 判断，并更新映射字段。
 ```
 
 本表新增或更新字段：
@@ -334,19 +359,27 @@ hashtag = 5
 cd45_isoform = 1
 spike_control = 1
 ambiguous = 33
-needs_llm_review = 33
-needs_manual_review = 33
+needs_llm_review = 35
+needs_manual_review = 35
 ```
 
 ### 8.2 llm_review 表统计
 
 ```text
 total features = 175
-llm_reviewed = 33
+llm_reviewed = 35
 gene = 168
 hashtag = 5
 cd45_isoform = 1
 spike_control = 1
+needs_manual_review = 3
+```
+
+本次 LLM/curation 新增的多基因收敛条目：
+
+```text
+mAOC0301 / mAOC-CD16     -> FCGR3A
+mAOC0453 / mAOC-HLA-ABC  -> HLA-A
 ```
 
 LLM 补判后仍低于 `0.8` 的 3 个条目已由用户人工接受：
@@ -374,6 +407,7 @@ mAOC415 / mAOC-CD158b1  -> KIR2DL2
 4. mapping_confidence < 0.8 的行是否都有 llm_reason 或 manual notes。
 5. 带后缀的 mAOCxxxx-1 是否因为 id 失配需要名称补判。
 6. CD32、CD158b1、CD158b2 等多基因或亚型歧义 alias 是否经过人工确认。
+7. `FCGR3A/FCGR3B`、`HLA-A/HLA-B/HLA-C` 等多基因 validation feature 是否在 llm_review 表中收敛为单一可绘图 RNA gene。
 ```
 
 本次已人工接受但仍建议在正式分析前复核抗体说明书或原始抗体表的条目：
@@ -392,4 +426,5 @@ mAOC415 / mAOC-CD158b1
 3. 若 mAOC_gene_symbol_map.csv 更新了带后缀 id 或 CD alias，LLM 补判结果可能需要重新评估。
 4. 当前 LLM 补判不是外部 API 调用，而是固化在脚本中的可复跑判断。
 5. 后续步骤建议优先使用 adt_feature_mapping.llm_review.tsv 作为 feature mapping 输入。
+6. Step 2 绘图不支持 `FCGR3A/FCGR3B` 这种组合字符串直接作为 RNA feature；必须使用 review 后的单基因 `validation_feature`。
 ```
