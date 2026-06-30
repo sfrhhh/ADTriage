@@ -887,7 +887,41 @@ min_cells_per_group
 
 ---
 
-### Step 5. 评估 ADT CLR 分布指标
+### Step 5. 先验表达审查
+
+对于每个非 control ADT feature，ADTriage 根据以下信息判断其理论预期表达群：
+
+```text
+feature_name
+human_gene_symbol
+target_class
+用户指定 group_by 列中的 group levels
+观察到的 ADT 阳性 group
+观察到的 RNA 或 CD45isoform 高表达 group
+```
+
+优先级：
+
+```text
+1. 本地 marker prior 配置文件
+2. 项目内已有人工审查记录
+3. 大模型辅助判断
+4. 人工审查
+```
+
+大模型只处理缺失或不确定项。
+当大模型置信度 `< 0.8` 时，必须进入人工审查。
+
+输出：
+
+```text
+05_prior_review/marker_prior_review.tsv
+05_prior_review/marker_prior_review.llm.jsonl
+```
+
+---
+
+### Step 6. 评估 ADT CLR 分布指标
 
 对每个 ADT feature 计算分布指标。
 
@@ -921,43 +955,9 @@ positive CV
 输出：
 
 ```text
-05_distribution_metrics/adt_distribution_metrics.tsv
-05_distribution_metrics/adt_gmm_metrics.tsv
-05_distribution_metrics/adt_density_plots/
-```
-
----
-
-### Step 6. 先验表达审查
-
-对于每个非 control ADT feature，ADTriage 根据以下信息判断其理论预期表达群：
-
-```text
-feature_name
-human_gene_symbol
-target_class
-用户指定 group_by 列中的 group levels
-观察到的 ADT 阳性 group
-观察到的 RNA 或 CD45isoform 高表达 group
-```
-
-优先级：
-
-```text
-1. 本地 marker prior 配置文件
-2. 项目内已有人工审查记录
-3. 大模型辅助判断
-4. 人工审查
-```
-
-大模型只处理缺失或不确定项。
-当大模型置信度 `< 0.8` 时，必须进入人工审查。
-
-输出：
-
-```text
-06_prior_review/marker_prior_review.tsv
-06_prior_review/marker_prior_review.llm.jsonl
+06_distribution_metrics/adt_distribution_metrics.tsv
+06_distribution_metrics/adt_gmm_metrics.tsv
+06_distribution_metrics/adt_density_plots/
 ```
 
 ---
