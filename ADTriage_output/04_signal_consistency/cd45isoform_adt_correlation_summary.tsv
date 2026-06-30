@@ -1,0 +1,3 @@
+group_by	feature_id	feature_name	target_class	validation_assay	validation_feature	validation_signal	pearson_correlation	spearman_correlation	linear_model_slope	linear_model_r_squared	n_groups	min_cells_per_group	status	message
+Adult_cHSPCs_Ultima_majority_voting	FADT0040	mAOC-CD45RA	cd45_isoform	CD45isoforms	PTPRC-RA	CD45isoforms group mean	0.866469465763525	0.683333333333333	9.5543551984829	0.750769335100528	9	116	ok	
+Standardpcaclusters	FADT0040	mAOC-CD45RA	cd45_isoform	CD45isoforms	PTPRC-RA	CD45isoforms group mean	0.877884842596093	0.764285714285714	9.88575813653485	0.770681796859967	15	84	ok	
