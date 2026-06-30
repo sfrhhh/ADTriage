@@ -1,0 +1,112 @@
+marker_symbol	expected_positive_groups	prior_confidence	prior_action	prior_evidence
+ABCG2	HSC_MPP	0.95	vote	Stem/progenitor-associated transporter.
+ALCAM	HSC_MPP	0.95	vote	ALCAM/CD166 supports primitive HSC-associated states; do not directly assign prior support to MEBEMP-L.
+B3GAT1	NK/T	0.95	vote	CD57/B3GAT1 is associated with differentiated NK/T cells.
+BST1	Monocyte	0.95	vote	BST1/CD157 is myeloid/monocyte-associated in this strict prior; do not directly assign prior support to GMP-L.
+CCR2	Monocyte	0.95	vote	CCR2 is a monocyte chemokine receptor.
+CCR5	Monocyte;NK/T	0.95	vote	CCR5 is commonly seen in T/NK and myeloid immune subsets.
+CCR7	NK/T	0.95	vote	CCR7 is lymphoid trafficking-associated, strongest for T-cell contexts here; remove CLP direct prior support.
+CD19	B	0.95	vote	CD19 is a canonical B-cell marker.
+CD1D		0.95	no_vote	CD1D is APC-associated and not lineage-defining for B or Monocyte.
+CD2	NK/T	0.95	vote	CD2 is a canonical T/NK marker.
+CD22	B	0.95	vote	CD22 is a B-cell marker.
+CD24	B;CLP	0.95	vote	CD24 is common on B/lymphoid progenitor populations.
+CD27	B;NK/T	0.95	vote	CD27 marks lymphoid memory/activation states.
+CD274	Monocyte	0.95	vote	CD274/PD-L1 is APC/myeloid activation-associated; remove GMP-L direct prior support.
+CD28	NK/T	0.95	vote	CD28 is a T-cell co-stimulatory receptor.
+CD34	HSC_MPP;MEBEMP-L	0.95	vote	CD34 is a canonical HSPC marker.
+CD37	B	0.95	vote	CD37 is enriched on B cells.
+CD38	B;CLP;GMP-L;MEBEMP-L	0.95	vote	CD38 marks lymphoid/B/plasma-like and committed progenitor compartments; it should not support primitive HSC_MPP.
+CD3E	NK/T	0.95	vote	CD3E is a canonical T-cell marker.
+CD4	Monocyte;NK/T	0.95	vote	CD4 is expressed by helper T cells and some monocytes.
+CD40	B;Monocyte	0.95	vote	CD40 is expressed on B cells and antigen-presenting cells.
+CD40LG	NK/T	0.95	vote	CD40LG/CD154 is a T-cell activation marker.
+CD44		0.95	no_vote	CD44 is broadly hematopoietic/activation-associated; no strict lineage prior support.
+CD46		0.95	no_vote	CD46 is broadly expressed across leukocytes; no strict lineage prior support.
+CD47		0.95	no_vote	CD47 is broadly hematopoietic; no strict lineage prior support.
+CD58		0.95	no_vote	CD58 is broadly immune-associated; no strict lineage prior support.
+CD68	Monocyte	0.95	vote	CD68 is a monocyte/macrophage marker.
+CD7	CLP;NK/T	0.95	vote	CD7 is associated with T/NK and lymphoid progenitors.
+CD70	B;NK/T	0.95	vote	CD70 is an activation marker in lymphoid cells.
+CD74	B;Monocyte	0.95	vote	CD74/MHC-II invariant chain marks antigen-presenting cells.
+CD79B	B	0.95	vote	CD79B is a B-cell receptor component.
+CD80		0.95	no_vote	CD80 is APC activation/co-stimulation-associated; no strict lineage prior support.
+CD84		0.95	no_vote	CD84 is a broad SLAM-family immune marker; no strict lineage prior support.
+CD8A	NK/T	0.95	vote	CD8A is a cytotoxic T/NK-associated marker.
+CD93	HSC_MPP;Monocyte	0.95	vote	CD93 has progenitor/myeloid/endothelial contexts; remove MKP direct prior support.
+CEACAM1	Monocyte	0.95	vote	CEACAM1/CD66a is commonly myeloid-associated.
+CLEC4C		0.95	no_vote	CLEC4C/CD303 is a pDC marker; current label set lacks pDC, so no lineage prior support.
+CR1	B;Monocyte	0.95	vote	CD35/CR1 is enriched on B and myeloid cells.
+CR2	B	0.95	vote	CD21/CR2 is a B-cell marker.
+CSF1R	Monocyte	0.95	vote	CSF1R/CD115 marks monocyte/macrophage lineage.
+CSF2RA	GMP-L;Monocyte	0.95	vote	CSF2RA/CD116 is myeloid-associated.
+CXCR3	NK/T	0.95	vote	CXCR3/CD183 is commonly enriched in activated T/NK cells.
+CXCR5	B;NK/T	0.95	vote	CXCR5 supports B-cell and follicular helper T-like contexts; remove CLP direct prior support.
+DPP4	NK/T	0.95	vote	CD26/DPP4 is common in activated T cells.
+ENG	ERYP;MEBEMP-L	0.95	vote	ENG/CD105 is more consistent with erythroid/MEP-related progenitor context than strict HSC_MPP.
+ENTPD1		0.95	no_vote	ENTPD1/CD39 is regulatory/activation-associated; no strict lineage prior support.
+EPCAM		0.95	no_vote	EPCAM is not expected in hematopoietic populations.
+FCAR	Monocyte	0.95	vote	FCAR/CD89 is mature myeloid-associated; remove GMP-L direct prior support.
+FCER1A		0.95	no_vote	FCER1A is DC/basophil/mast-associated; current label set lacks a matching category.
+FCER2	B	0.95	vote	CD23/FCER2 is a B-cell marker.
+FCGR1A	Monocyte	0.95	vote	FCGR1A/CD64 is monocyte/macrophage-associated; remove GMP-L direct prior support.
+FCGR2A	Monocyte	0.95	vote	FCGR2A/CD32A is mature myeloid/APC-associated; remove GMP-L direct prior support.
+FCGR2B	B;Monocyte	0.95	vote	CD32B/FCGR2B is expressed on B and myeloid cells.
+FCGR3A	Monocyte;NK/T	0.95	vote	CD16/FCGR3A is associated with monocytes and NK cells.
+GPC2		0.95	no_vote	GPC2 is not a standard adult cHSPC lineage marker; require dataset-specific validation.
+HAVCR2		0.95	no_vote	HAVCR2/TIM-3 is activation/exhaustion/myeloid-state associated; no strict lineage prior support.
+HLAA		0.95	no_vote	HLA-A/MHC-I is broadly expressed on nucleated cells; no strict lineage prior support.
+ICAM2	HSC_MPP	0.95	vote	ICAM2/CD102 supports primitive/progenitor context; do not extend to MEBEMP-L without co-marker evidence.
+ICAM3		0.95	no_vote	ICAM3/CD50 is broadly leukocyte-associated; no strict lineage prior support.
+ICOS	NK/T	0.95	vote	ICOS/CD278 is a T-cell activation marker.
+IGSF8		0.95	no_vote	IGSF8/CD316 is broadly immune-associated; no strict lineage prior support.
+IL2RA	CLP;NK/T	0.95	vote	CD25/IL2RA is lymphoid activation/progenitor-associated.
+IL2RB	NK/T	0.95	vote	CD122/IL2RB is associated with NK/T cells.
+IL2RG	CLP;NK/T	0.95	vote	Common gamma chain is lymphoid-associated.
+IL3RA	CLP;GMP-L	0.95	vote	CD123/IL3RA marks pDC/myeloid progenitor states.
+IL4R	B;Monocyte	0.95	vote	IL4R/CD124 is common on B and myeloid cells.
+IL6R	B;Monocyte	0.95	vote	IL6R/CD126 is monocyte/B-associated.
+IL6ST		0.95	no_vote	IL6ST/CD130 is a broad cytokine receptor component; no strict lineage prior support.
+IL7R	CLP;NK/T	0.95	vote	CD127/IL7R marks lymphoid progenitors and T cells.
+ITGA2		0.95	no_vote	ITGA2/CD49b has platelet/megakaryocyte and NK/T contexts; send to review without co-marker evidence.
+ITGA4		0.95	no_vote	ITGA4/CD49d is broad across HSPC and immune cells; no strict lineage prior support.
+ITGA6	HSC_MPP	0.95	vote	ITGA6/CD49f is a primitive human HSC-enrichment marker; do not directly assign prior support to MEBEMP-L.
+ITGAL	Monocyte;NK/T	0.95	vote	CD11a/ITGAL is leukocyte adhesion-associated.
+ITGAX	Monocyte	0.95	vote	ITGAX/CD11c supports monocyte/DC context; remove GMP-L direct prior support.
+ITGB1		0.95	no_vote	ITGB1/CD29 is broadly expressed; no strict lineage prior support.
+ITGB2		0.95	no_vote	ITGB2/CD18 is broad leukocyte-associated; no strict lineage prior support.
+KIR2DL1	NK/T	0.95	vote	KIR2DL1/CD158a is NK-associated.
+KIR2DL3	NK/T	0.95	vote	KIR2DL3/CD158b2 is NK-associated.
+KIR3DL2	NK/T	0.95	vote	KIR3DL2/CD158k is NK-associated.
+KIT	GMP-L;HSC_MPP;MEBEMP-L	0.95	vote	KIT/CD117 marks progenitor states broadly across HSPC subsets.
+KLRB1	NK/T	0.95	vote	CD161/KLRB1 is NK/T-associated.
+KLRK1	NK/T	0.95	vote	NKG2D/KLRK1 is NK/T-associated.
+LAG3	NK/T	0.95	vote	LAG3/CD223 is a T/NK exhaustion/activation marker.
+LAMP1		0.95	no_vote	LAMP1/CD107a marks degranulation/lysosomal activation; no strict lineage prior support.
+LILRA5	Monocyte	0.95	vote	LILRA5/CD85f is mature myeloid-associated; remove GMP-L direct prior support.
+LILRB1	Monocyte;NK/T	0.95	vote	LILRB1/CD85j is myeloid and NK-associated.
+LILRB3	Monocyte	0.95	vote	LILRB3/CD85a is mature myeloid-associated; remove GMP-L direct prior support.
+LRRC32	NK/T	0.95	vote	GARP/LRRC32 is associated with regulatory/activated T cells.
+MCAM		0.95	no_vote	MCAM/CD146 is endothelial/stromal/perivascular-contextual; not a strict hematopoietic lineage marker.
+MS4A1	B	0.95	vote	CD20/MS4A1 is a canonical B-cell marker.
+NCAM1	NK/T	0.95	vote	CD56/NCAM1 is a canonical NK marker.
+NCR1	NK/T	0.95	vote	CD335/NCR1 is an NK-cell marker.
+NRP1		0.95	no_vote	NRP1/CD304 is pDC/endothelial/progenitor-contextual; do not assign prior support to Monocyte or HSC_MPP.
+PDCD1	NK/T	0.95	vote	PD-1/PDCD1 is a T-cell marker.
+PECAM1		0.95	no_vote	PECAM1/CD31 is endothelial/platelet/leukocyte/progenitor-broad; no strict lineage prior support.
+PROM1	HSC_MPP	0.95	vote	CD133/PROM1 marks primitive progenitors.
+PTPRCRA	B;CLP;GMP-L;NK/T	0.95	vote	CD45RA/PTPRC-RA is expected in lymphoid and some progenitor/myeloid populations.
+PVR		0.95	no_vote	PVR/CD155 is immune activation/adhesion-associated; no strict lineage prior support.
+SELL	B;CLP;NK/T	0.95	vote	SELL/CD62L supports lymphoid-primed and naive lymphoid contexts; remove HSC_MPP direct prior support.
+SEMA4D	B;NK/T	0.95	vote	CD100/SEMA4D is lymphoid-associated.
+SIGLEC15	Monocyte	0.95	vote	SIGLEC15 is myeloid-associated.
+SIRPA	Monocyte	0.95	vote	SIRPA/CD172a supports monocyte/DC/myeloid context; remove GMP-L direct prior support.
+SLAMF6	B;NK/T	0.95	vote	CD352/SLAMF6 is lymphoid-associated.
+SLC3A2		0.95	no_vote	SLC3A2/CD98 marks activation/proliferation; no strict lineage prior support.
+TEK		0.95	no_vote	TEK/Tie2 is endothelial/progenitor-contextual; not strict enough for HSC_MPP voting.
+TFRC	ERYP	0.95	vote	TFRC/CD71 strongly supports erythroid identity in hematopoiesis; avoid broad MEBEMP-L voting unless combined with other ME markers.
+TIGIT	NK/T	0.95	vote	TIGIT is a T/NK checkpoint marker.
+TNFRSF17	B	0.95	vote	BCMA/TNFRSF17 is B-lineage/plasma-associated.
+TNFRSF18	NK/T	0.95	vote	GITR/TNFRSF18 is T-cell-associated.
+TNFRSF9	NK/T	0.95	vote	4-1BB/TNFRSF9 is T-cell activation-associated.
+VSIR	Monocyte	0.95	vote	VISTA/VSIR is myeloid-associated.
