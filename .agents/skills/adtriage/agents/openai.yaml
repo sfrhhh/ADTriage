@@ -1,0 +1,4 @@
+interface:
+  display_name: "ADTriage"
+  short_description: "Run ADT feature-level triage for prepared CITE-seq Seurat objects."
+  default_prompt: "Use $adtriage to run ADTriage on a prepared CITE-seq / Feature Barcode Seurat object. First inspect Assays, Reductions, and metadata columns; then run the Step 1-7 workflow with explicit biological_group_by, summary_group_by, and reduction settings."
